@@ -2,6 +2,13 @@
 
 All notable changes to "Dev Theme Pro" will be documented in this file.
 
+## [0.2.1] - 2025-12-29
+
+### Fixed
+
+- Fixed GitHub Actions workflow publishing issues
+- Improved workflow reliability and error handling
+
 ## [0.2.0] - 2025-12-29
 
 ### Added
