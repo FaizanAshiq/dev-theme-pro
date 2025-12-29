@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+vsc-extension-quickstart.md
+node_modules/**
+*.vsix
+.git/**
+.github/**
+samples/**
+PUBLISHING_GUIDE.md

@@ -1,0 +1,69 @@
+{
+  "name": "dev-theme-pro",
+  "displayName": "Dev Theme Pro",
+  "description": "A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability.",
+  "publisher": "FaizanAshiq",
+  "version": "0.2.0",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e2e",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FaizanAshiq/dev-theme-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FaizanAshiq/dev-theme-pro/issues"
+  },
+  "homepage": "https://github.com/FaizanAshiq/dev-theme-pro#readme",
+  "keywords": [
+    "theme",
+    "dark theme",
+    "dark",
+    "syntax highlighting",
+    "color theme",
+    "colorful",
+    "dark mode",
+    "night",
+    "night mode",
+    "editor theme",
+    "vscode theme",
+    "visual studio code",
+    "javascript",
+    "typescript",
+    "react",
+    "python",
+    "developer",
+    "programming",
+    "coding",
+    "smooth",
+    "modern",
+    "purple",
+    "aesthetic",
+    "eye care",
+    "productivity"
+  ],
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Dev Theme Pro Smooth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dev-theme-pro-smooth-color-theme.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "vsce": "^2.15.0"
+  },
+  "scripts": {
+    "pack": "vsce package"
+  }
+}
