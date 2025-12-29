@@ -27,15 +27,15 @@
 
 ## Screenshots
 
-![TypeScript](images/typescript.png)
+![TypeScript](images/typescript.jpg)
 
-![React](images/react.png)
+![React](images/react.jpg)
 
-![JavaScript](images/javascript.png)
+![JavaScript](images/javascript.jpg)
 
-![HTML & CSS](images/html-css.png)
+![HTML & CSS](images/html-css.jpg)
 
-![Python](images/python.png)
+![Python](images/python.jpg)
 
 ## Installation
 

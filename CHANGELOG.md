@@ -2,6 +2,14 @@
 
 All notable changes to "Dev Theme Pro" will be documented in this file.
 
+## [0.2.2] - 2025-12-29
+
+### Improved
+
+- Optimized screenshot images for faster loading (77% size reduction)
+- Converted screenshots from PNG to JPEG format for better performance
+- Updated sample files with consistent formatting for better screenshots
+
 ## [0.2.1] - 2025-12-29
 
 ### Fixed
