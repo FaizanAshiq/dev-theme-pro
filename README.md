@@ -1,54 +1,49 @@
-<h1 align="center">
-  <br>
-  <img src="images/icon.png" alt="Dev Theme Pro" width="150">
-  <br><br>
-  Dev Theme Pro
-  <br>
-</h1>
+# Dev Theme Pro 🌌
 
-<h4 align="center">A beautiful dark theme with colorful syntax highlighting for VS Code.</h4>
+A sleek, developer-friendly VS Code theme for modern coding with beautiful syntax highlighting and smooth color
+transitions.
+
+![Version](https://img.shields.io/visual-studio-marketplace/v/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=A46FED&label=VERSION)
+![Downloads](https://img.shields.io/visual-studio-marketplace/d/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=cc866a&label=DOWNLOADS)
+![Rating](https://img.shields.io/visual-studio-marketplace/r/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=56C98E&label=RATING)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro">
-    <img src="https://img.shields.io/visual-studio-marketplace/v/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=A46FED&label=VERSION" alt="Version">
-  </a>&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro">
-    <img src="https://img.shields.io/visual-studio-marketplace/r/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=56C98E&label=RATING" alt="Rating">
-  </a>&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro">
-    <img src="https://img.shields.io/visual-studio-marketplace/i/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=C2B776&label=INSTALLS" alt="Installs">
-  </a>&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro">
-    <img src="https://img.shields.io/visual-studio-marketplace/d/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=cc866a&label=DOWNLOADS" alt="Downloads">
-  </a>
+  <img src="images/icon.png" alt="Dev Theme Pro" width="120">
 </p>
-
-<br>
 
 ## Screenshots
 
-![TypeScript](images/typescript.jpg)
+**TypeScript Preview** ![TypeScript](images/typescript.jpg)
 
-![React](images/react.jpg)
+**React Preview** ![React](images/react.jpg)
 
-![JavaScript](images/javascript.jpg)
+**JavaScript Preview** ![JavaScript](images/javascript.jpg)
 
-![HTML & CSS](images/html-css.jpg)
+**HTML & CSS Preview** ![HTML & CSS](images/html-css.jpg)
 
-![Python](images/python.jpg)
+**Python Preview** ![Python](images/python.jpg)
 
 ## Installation
 
-1. Open the **Extensions** sidebar in VS Code (`Ctrl+Shift+X` / `Cmd+Shift+X`)
-2. Search for **Dev Theme Pro**
-3. Click **Install**
-4. Go to `File → Preferences → Color Theme` (or `Code → Settings → Theme → Color Theme` on macOS)
-5. Select **Dev Theme Pro Smooth**
-6. ⭐⭐⭐⭐⭐ Rate five-stars if you enjoy it!
+### Marketplace
 
-## Customization
+1. Open VS Code → Extensions (`Ctrl+Shift+X` / `Cmd+Shift+X`)
+2. Search `Dev Theme Pro`
+3. Click Install
+4. Go to `File → Preferences → Color Theme` and select **Dev Theme Pro Smooth**
 
-If you want to tweak colors, add this to your `settings.json`:
+### Manual
+
+1. Download or clone this repo
+2. Copy the theme to your VS Code extensions folder
+3. Reload VS Code and select the theme
+
+⭐ **Rate five-stars if you enjoy it!**
+
+## Customize Colors
+
+You can override colors in `settings.json`:
 
 ```json
 "workbench.colorCustomizations": {
@@ -100,11 +95,11 @@ Found a bug or have a feature request?
 
 ## License
 
-[MIT License](LICENSE.txt) © 2025 Faizan Ashiq
+MIT © Faizan Ashiq - [Full License](LICENSE.txt)
 
 ---
 
-<p align="center">
-  <strong>Enjoy coding with Dev Theme Pro!</strong><br>
-  If you like this theme, please ⭐ star the repo and leave a review on the <a href="https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro">VS Code Marketplace</a>.
-</p>
+**Enjoying Dev Theme Pro?** ⭐ Star the repo and share feedback!
+
+If you like this theme, please leave a review on the
+[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro).

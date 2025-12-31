@@ -2,6 +2,18 @@
 
 All notable changes to "Dev Theme Pro" will be documented in this file.
 
+## [0.2.3] - 2025-12-31
+
+### Improved
+
+- Enhanced README with marketplace-ready formatting and structure
+- Added catchy header with emoji and cleaner description
+- Streamlined installation instructions with marketplace method first
+- Added descriptive captions to all screenshot previews
+- Simplified customization section for better user experience
+- Updated call-to-action section for better engagement
+- Improved badge layout and added MIT license badge
+
 ## [0.2.2] - 2025-12-29
 
 ### Improved
