@@ -3,11 +3,6 @@
 A sleek, developer-friendly VS Code theme for modern coding with beautiful syntax highlighting and smooth color
 transitions.
 
-![Version](https://img.shields.io/visual-studio-marketplace/v/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=A46FED&label=VERSION)
-![Downloads](https://img.shields.io/visual-studio-marketplace/d/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=cc866a&label=DOWNLOADS)
-![Rating](https://img.shields.io/visual-studio-marketplace/r/FaizanAshiq.dev-theme-pro?style=for-the-badge&colorA=1e1e2e&colorB=56C98E&label=RATING)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
-
 <p align="center">
   <img src="images/icon.png" alt="Dev Theme Pro" width="120">
 </p>
@@ -91,11 +86,11 @@ Found a bug or have a feature request?
 
 ## Author
 
-**Faizan Ashiq** — [LinkedIn](https://www.linkedin.com/in/faizan-ashiq/) · [GitHub](https://github.com/FaizanAshiq)
+**Faizan Ashiq** — [LinkedIn](https://www.linkedin.com/in/faizanashiq/) · [GitHub](https://github.com/FaizanAshiq)
 
 ## License
 
-MIT © Faizan Ashiq - [Full License](LICENSE.txt)
+MIT © 2025-2026 Faizan Ashiq - [Full License](LICENSE.txt)
 
 ---
 

@@ -2,6 +2,96 @@
 
 All notable changes to "Dev Theme Pro" will be documented in this file.
 
+## [0.5.0] - 2026-02-15
+
+### Added
+
+- **12 theme variants** — 4 accents × 3 background depths:
+  - 🌊 Ocean, 🌌 Nebula, 💎 Emerald, ✨ Amber
+  - 🌅 Dusk (lightest), 🌙 Night (default), 🕳️ Void (darkest)
+- Background depth system with `lighten()` helper — `bgFloat` and `inlayBg` auto-derived per variant
+- Emoji-labeled theme names for easy identification in the theme picker
+
+### Changed
+
+- **Decorators are now blue** (`#6194FC`, bold) — distinct from functions/methods (green `#56C98E`)
+- Narrowed TextMate function scopes to avoid coloring constructors in `new X()` as green
+- Removed base `function` semantic token — lets TypeScript class constructors fall through to class color (yellow)
+- Added TS-specific decorator scope (`source.ts meta.decorator.ts meta.function-call.ts entity.name.function.ts`)
+- React/Vue components styled blue bold (matching decorators)
+- Classes, types, interfaces, enums remain yellow (`#C2B776`, bold)
+
+### Fixed
+
+- `editorWidget.background` now uses elevated `bgFloat` (derived per variant) instead of hardcoded value
+- Widget border opacity increased for better visibility on floating panels
+
+## [0.4.0] - 2026-02-15
+
+### Added
+
+- **4 accent variants**: Ocean, Nebula, Emerald, Amber — same syntax, different UI accents
+- JS theme generator (`src/generate.js`) — single source of truth for all variants
+- 469 workbench color keys with full accent propagation
+- 42 semantic token entries for zero-flash coloring
+- React/Vue component tag styling
+- New icon
+
+### Changed
+
+- Accent color system — all UI colors derive from single accent hex + opacity
+- Minified JSON output, generator source gitignored
+- `npm run pack` auto-generates before packaging
+
+### Fixed
+
+- Zero-flash on file open — TextMate and semantic tokens aligned
+- Terminal ANSI magenta corrected to purple
+- Inlay hint, scrollbar shadow, selection highlight fixes
+- Removed dead TextMate scopes and duplicates
+
+### Improved
+
+- Git decoration colors redesigned
+- Focus borders rebalanced
+- File list selection modernized
+
+## [0.3.0] - 2026-02-15
+
+### Fixed
+
+- Fixed input box border disappearing on focus in Copilot Chat and all other input fields (`focusBorder` was transparent)
+- Fixed editor ruler being full opacity (blindingly bright)
+- Fixed panel section drop overlay being fully opaque
+- Fixed menu separators being full opacity white bars
+- Fixed list hover producing zero visual change (same as background)
+- Fixed list active selection having no background highlight
+- Fixed current find match being nearly invisible (pure black on dark bg)
+- Fixed find match highlights being too faint (~6% opacity)
+- Fixed find matches being invisible in overview ruler scrollbar
+- Fixed badge backgrounds being transparent (floating text, no pill)
+- Fixed inactive selection using red tint (looked like error highlights)
+- Fixed settings modified indicator blending in with foreground
+- Fixed inlay hint background creating harsh dark slots
+- Fixed duplicate `keyword.control.flow` scopes (appeared 3 times)
+
+### Added
+
+- Enabled `semanticHighlighting: true` for richer language-server-based coloring
+- Added modern `extensionButton.background` / `hoverBackground` keys alongside deprecated equivalents
+- Added SUGGESTIONS.md with 200+ missing modern VS Code color keys to implement
+- Added IMPROVEMENTS.md documenting all fixes and review notes
+- Git tagging for release versioning
+
+### Improved
+
+- Renamed misleading tokenColor rule "Brackets" to "Strings"
+- Renamed four duplicate "Shell - Command" rules to distinct names
+- Fixed "CSS ID's" typo to "CSS IDs"
+- Added `name` property to default token fallback rule
+- Updated copyright year to 2026
+- Updated LinkedIn profile link
+
 ## [0.2.3] - 2025-12-31
 
 ### Improved
