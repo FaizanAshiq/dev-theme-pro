@@ -1,23 +1,41 @@
 # Dev Theme Pro 🌌
 
-A sleek, developer-friendly VS Code theme for modern coding with beautiful syntax highlighting and smooth color
-transitions.
+A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability. **12 variants** — pick your accent color and background depth.
 
 <p align="center">
   <img src="images/icon.png" alt="Dev Theme Pro" width="120">
 </p>
 
+![Dev Theme Pro — 4 Accent Variants](images/window/themes.png)
+
+## Theme Variants
+
+**4 Accents** × **3 Backgrounds** = **12 themes**
+
+| Accent     | Dusk 🌅 (lightest) | Night 🌙 (default) | Void 🕳️ (darkest) |
+| ---------- | ------------------ | ------------------ | ----------------- |
+| ✨ Amber   | Amber Dusk         | Amber Night        | Amber Void        |
+| 💎 Emerald | Emerald Dusk       | Emerald Night      | Emerald Void      |
+| 🌌 Nebula  | Nebula Dusk        | Nebula Night       | Nebula Void       |
+| 🌊 Ocean   | Ocean Dusk         | Ocean Night        | Ocean Void        |
+
 ## Screenshots
 
-**TypeScript Preview** ![TypeScript](images/typescript.jpg)
+### Editor Preview
 
-**React Preview** ![React](images/react.jpg)
+![Dev Theme Pro — Editor](images/window/code.jpg)
 
-**JavaScript Preview** ![JavaScript](images/javascript.jpg)
+### Syntax Highlighting
 
-**HTML & CSS Preview** ![HTML & CSS](images/html-css.jpg)
+**TypeScript** ![TypeScript](images/typescript.jpg)
 
-**Python Preview** ![Python](images/python.jpg)
+**React** ![React](images/react.jpg)
+
+**JavaScript** ![JavaScript](images/javascript.jpg)
+
+**HTML & CSS** ![HTML & CSS](images/html-css.jpg)
+
+**Python** ![Python](images/python.jpg)
 
 ## Installation
 
@@ -26,23 +44,23 @@ transitions.
 1. Open VS Code → Extensions (`Ctrl+Shift+X` / `Cmd+Shift+X`)
 2. Search `Dev Theme Pro`
 3. Click Install
-4. Go to `File → Preferences → Color Theme` and select **Dev Theme Pro Smooth**
+4. Go to `File → Preferences → Color Theme` and pick any **Dev Theme Pro** variant
 
 ### Manual
 
 1. Download or clone this repo
-2. Copy the theme to your VS Code extensions folder
+2. Copy the folder to your VS Code extensions directory
 3. Reload VS Code and select the theme
 
 ⭐ **Rate five-stars if you enjoy it!**
 
 ## Customize Colors
 
-You can override colors in `settings.json`:
+You can override colors in `settings.json` (replace the variant name as needed):
 
 ```json
 "workbench.colorCustomizations": {
-  "[Dev Theme Pro Smooth]": {
+  "[Dev Theme Pro — 🌊 Ocean 🌙 Night]": {
     "editor.background": "#1a1a2e",
     "sideBar.background": "#1a1a2e"
   }
@@ -62,7 +80,7 @@ You can override colors in `settings.json`:
 
 ```json
 "editor.tokenColorCustomizations": {
-  "[Dev Theme Pro Smooth]": {
+  "[Dev Theme Pro — 🌊 Ocean 🌙 Night]": {
     "textMateRules": [
       {
         "scope": ["comment", "keyword", "storage.modifier"],

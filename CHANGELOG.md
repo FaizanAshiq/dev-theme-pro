@@ -2,158 +2,186 @@
 
 All notable changes to "Dev Theme Pro" will be documented in this file.
 
+---
+
+## [0.5.2] - 2026-02-22
+
+### Fixed
+
+- **Focus borders now correctly show the accent color** — focused inputs, dropdowns, buttons, and widgets all highlight with your chosen accent. Previously focus borders were invisible across the entire UI
+- Extension marketplace buttons now use the full accent color instead of a faded tint
+- Toolbar hover and active states were not using accent — now consistent with the rest of the UI
+
+### Added
+
+- **Python syntax highlighting** — comprehensive coverage added:
+  - Keywords and control flow (`if`, `for`, `with`, `yield`, `async`, etc.)
+  - Built-in functions (`print`, `len`, `range`, `super`, `isinstance`, etc.)
+  - Built-in types (`int`, `str`, `list`, `dict`, `bool`, etc.)
+  - Class names, function and method definitions
+  - Decorators (`@property`, `@staticmethod`, custom decorators)
+  - Magic methods (`__init__`, `__str__`, `__repr__`, etc.) and magic variables (`__name__`, `__all__`, etc.)
+  - `self` and `cls` parameters
+  - Exception types, `True` / `False` / `None` constants
+  - Type annotations and f-string format specs
+
+- **Broader UI accent coverage** — the following UI elements now correctly pick up the accent color:
+  - Checkboxes (background, foreground, border)
+  - Toolbar hover and active backgrounds
+  - Settings editor focused row border
+  - Search editor text input border
+  - Extension button separator and foreground
+  - Input option hover background (now subtler, was too heavy)
+
+### Changed
+
+- **HTML highlighting improvements:**
+  - Tag punctuation (`<`, `>`) de-emphasized to reduce visual noise
+  - Attribute `=` signs dimmed — distinct from attribute names and values
+  - HTML entities colored consistently as values
+  - `<!DOCTYPE>` de-emphasized as boilerplate
+  - Embedded `<script>` and `<style>` tag names colored as keywords to signal a language boundary
+  - Quote punctuation around attribute values colored consistently with string quotes
+
+- **CSS / SCSS / Less highlighting improvements:**
+  - Property names given a distinct color — no longer the same as generic variables
+  - Units (`px`, `em`, `rem`, `%`, `vh`, etc.) individually colored
+  - At-rules (`@media`, `@keyframes`, `@import`, `@mixin`, etc.) colored as keywords
+  - `!important` colored red and bold
+  - CSS functions (`rgb()`, `var()`, `calc()`, `linear-gradient()`, etc.) colored green
+  - CSS custom properties (`--variable`) colored distinctly with italic
+  - SCSS variables (`$var`) and Less variables (`@var`) colored as module references
+  - SCSS interpolation brackets `#{...}` colored as keywords
+  - ID selectors fixed — previously mapped to the wrong scope
+  - Class selector color slightly desaturated for a more balanced palette
+  - Vendor-prefixed property names covered
+
+- Default fallback text color updated to a neutral grey — plain unscoped text now looks balanced across all languages
+
+---
+
 ## [0.5.1] - 2026-02-22
 
 ### Changed
 
-- Refined core palette — class/type yellow (`#C2B776` → `#BAAF6D`), function green (`#56C98E` → `#45BF80`), keyword purple (`#A46FED` → `#B070FF`) for better contrast
-- Removed excessive **bold** styling from semantic tokens (variables, properties, keywords, decorators)
-- Focus border made transparent globally; `input.focusBorder` and `dropdown.focusBorder` now carry the accent color independently
-- Updated bracket highlight, symbol icon, chart, and terminal ANSI magenta colors to match refined palette
+- Core syntax palette tuned — class/type, function, and keyword hues adjusted for improved contrast and visual separation
+- Reduced over-use of bold — variables, properties, and keywords are no longer bold by default, keeping bold reserved for truly important distinctions (classes, decorators, `!important`)
+- Updated bracket pair colors, symbol icons, chart colors, and terminal ANSI palette to match the refined hues
 
 ### Added
 
-- `punctuation.accessor.optional` (optional chaining `?.`) added to keyword scopes
-- Comma separators, type annotations (`keyword.operator.type.annotation`), and key-value separators added to punctuation scopes
-- Enhanced string scopes with `string.quoted.single` and `punctuation.definition.string`
-- Explicit no-bold (`fontStyle: ""`) for all JSON-specific token rules + general `source.json` scope
-- Made `punctuation.separator.inheritance` language-agnostic (was PHP-only)
+- Optional chaining (`?.`) now correctly highlighted as a keyword operator
+- Type annotation operators, comma separators, and key-value separators all highlighted consistently
+- Single-quoted strings and their surrounding punctuation now covered
+- JSON values no longer incorrectly rendered bold
+- `extends` / `implements` inheritance separators now language-agnostic
+
+---
 
 ## [0.5.0] - 2026-02-15
 
 ### Added
 
-- **12 theme variants** — 4 accents × 3 background depths:
-  - 🌊 Ocean, 🌌 Nebula, 💎 Emerald, ✨ Amber
-  - 🌅 Dusk (lightest), 🌙 Night (default), 🕳️ Void (darkest)
-- Background depth system with `lighten()` helper — `bgFloat` and `inlayBg` auto-derived per variant
-- Emoji-labeled theme names for easy identification in the theme picker
+- **12 theme variants** — choose your accent and background depth independently:
+  - Accents: 🌊 Ocean · 🌌 Nebula · 💎 Emerald · ✨ Amber
+  - Backgrounds: 🌅 Dusk (lighter) · 🌙 Night (default) · 🕳️ Void (darkest)
+- Floating panels and inlay hints automatically use a subtly elevated background tone per variant
 
 ### Changed
 
-- **Decorators are now blue** (`#6194FC`, bold) — distinct from functions/methods (green `#56C98E`)
-- Narrowed TextMate function scopes to avoid coloring constructors in `new X()` as green
-- Removed base `function` semantic token — lets TypeScript class constructors fall through to class color (yellow)
-- Added TS-specific decorator scope (`source.ts meta.decorator.ts meta.function-call.ts entity.name.function.ts`)
-- React/Vue components styled blue bold (matching decorators)
-- Classes, types, interfaces, enums remain yellow (`#C2B776`, bold)
+- Decorators are now blue and bold — visually distinct from functions (green) and classes (yellow)
+- React and Vue component tags styled consistently with decorators (blue bold)
+- Class constructors no longer incorrectly colored as functions
 
 ### Fixed
 
-- `editorWidget.background` now uses elevated `bgFloat` (derived per variant) instead of hardcoded value
-- Widget border opacity increased for better visibility on floating panels
+- Floating widget backgrounds now correctly reflect the current background depth variant
+
+---
 
 ## [0.4.0] - 2026-02-15
 
 ### Added
 
-- **4 accent variants**: Ocean, Nebula, Emerald, Amber — same syntax, different UI accents
-- JS theme generator (`src/generate.js`) — single source of truth for all variants
-- 469 workbench color keys with full accent propagation
-- 42 semantic token entries for zero-flash coloring
-- React/Vue component tag styling
-- New icon
-
-### Changed
-
-- Accent color system — all UI colors derive from single accent hex + opacity
-- Minified JSON output, generator source gitignored
-- `npm run pack` auto-generates before packaging
+- **4 accent color variants**: 🌊 Ocean, 🌌 Nebula, 💎 Emerald, ✨ Amber
+- Full accent propagation across all UI surfaces — status bar, activity bar, badges, buttons, scrollbars, diff gutter, minimap, breadcrumbs, and more
+- Rich semantic highlighting for near-instant coloring on file open (no color flash)
+- React and Vue component tag styling (blue bold)
+- New extension icon
 
 ### Fixed
 
-- Zero-flash on file open — TextMate and semantic tokens aligned
+- Color flash on file open eliminated — TextMate and semantic token colors now aligned
 - Terminal ANSI magenta corrected to purple
-- Inlay hint, scrollbar shadow, selection highlight fixes
-- Removed dead TextMate scopes and duplicates
+- Scrollbar, selection highlight, and inlay hint color fixes
 
 ### Improved
 
-- Git decoration colors redesigned
-- Focus borders rebalanced
-- File list selection modernized
+- Git decoration colors redesigned for clarity
+- File list selection and hover states modernized
+- Focus border balance improved across the UI
+
+---
 
 ## [0.3.0] - 2026-02-15
 
 ### Fixed
 
-- Fixed input box border disappearing on focus in Copilot Chat and all other input fields (`focusBorder` was transparent)
-- Fixed editor ruler being full opacity (blindingly bright)
-- Fixed panel section drop overlay being fully opaque
-- Fixed menu separators being full opacity white bars
-- Fixed list hover producing zero visual change (same as background)
-- Fixed list active selection having no background highlight
-- Fixed current find match being nearly invisible (pure black on dark bg)
-- Fixed find match highlights being too faint (~6% opacity)
-- Fixed find matches being invisible in overview ruler scrollbar
-- Fixed badge backgrounds being transparent (floating text, no pill)
-- Fixed inactive selection using red tint (looked like error highlights)
-- Fixed settings modified indicator blending in with foreground
-- Fixed inlay hint background creating harsh dark slots
-- Fixed duplicate `keyword.control.flow` scopes (appeared 3 times)
+- Input box borders now visible in Copilot Chat, the Search panel, Find widget, and all other inputs
+- Find match highlights — current match and other matches are now clearly distinct
+- Badge pills now have a visible background (were transparent — text appeared floating)
+- List hover and active selection highlights now clearly visible
+- Settings modified indicator no longer blends into the foreground text
+- Inactive selection highlight fixed (previously had a red tint, looked like an error)
+- Editor rulers no longer blindingly bright at full opacity
+- Panel drop overlay, menu separators, and list hover backgrounds all corrected
+- Inlay hints no longer create harsh dark slots behind them
 
 ### Added
 
-- Enabled `semanticHighlighting: true` for richer language-server-based coloring
-- Added modern `extensionButton.background` / `hoverBackground` keys alongside deprecated equivalents
-- Added SUGGESTIONS.md with 200+ missing modern VS Code color keys to implement
-- Added IMPROVEMENTS.md documenting all fixes and review notes
-- Git tagging for release versioning
+- Semantic highlighting enabled for richer language-server-powered coloring
 
-### Improved
-
-- Renamed misleading tokenColor rule "Brackets" to "Strings"
-- Renamed four duplicate "Shell - Command" rules to distinct names
-- Fixed "CSS ID's" typo to "CSS IDs"
-- Added `name` property to default token fallback rule
-- Updated copyright year to 2026
-- Updated LinkedIn profile link
+---
 
 ## [0.2.3] - 2025-12-31
 
 ### Improved
 
-- Enhanced README with marketplace-ready formatting and structure
-- Added catchy header with emoji and cleaner description
-- Streamlined installation instructions with marketplace method first
-- Added descriptive captions to all screenshot previews
-- Simplified customization section for better user experience
-- Updated call-to-action section for better engagement
-- Improved badge layout and added MIT license badge
+- README fully rewritten for the marketplace — cleaner layout, better structure, improved installation guide, descriptive screenshot captions
+
+---
 
 ## [0.2.2] - 2025-12-29
 
 ### Improved
 
-- Optimized screenshot images for faster loading (77% size reduction)
-- Converted screenshots from PNG to JPEG format for better performance
-- Updated sample files with consistent formatting for better screenshots
+- Screenshot images optimized — 77% smaller file sizes for faster marketplace loading
+- Screenshots converted to JPEG format
+- Sample files updated for cleaner screenshots
+
+---
 
 ## [0.2.1] - 2025-12-29
 
 ### Fixed
 
-- Fixed GitHub Actions workflow publishing issues
-- Improved workflow reliability and error handling
+- Automated publishing workflow reliability improvements
+
+---
 
 ## [0.2.0] - 2025-12-29
 
 ### Added
 
-- GitHub Actions workflow for automated publishing
-- Automated extension packaging and marketplace publishing
+- GitHub Actions workflow for automated marketplace publishing
 
-### Fixed
-
-- Updated copyright dates to 2025
-- Improved workflow reliability
+---
 
 ## [0.1.0] - 2025-12-29
 
 ### Added
 
 - Initial release of Dev Theme Pro
-- "Dev Theme Pro Smooth" dark theme variant
-- Colorful syntax highlighting for improved code readability
+- Dark theme with colorful, high-contrast syntax highlighting
 - Optimized for JavaScript, TypeScript, Python, HTML, CSS, and more
-- Custom UI colors for a cohesive dark experience
+- Custom UI colors for a cohesive dark editor experience
