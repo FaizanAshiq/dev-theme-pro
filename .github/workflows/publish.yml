@@ -22,14 +22,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install vsce
-        run: npm install -g @vscode/vsce
-
       - name: Package extension
         run: |
           echo "Publishing version:"
           node -p "require('./package.json').version"
-          vsce package --no-dependencies
+          npx @vscode/vsce package --no-dependencies
 
       - name: Publish to marketplace
-        run: vsce publish --no-dependencies --pat ${{ secrets.VSCE_PAT }}
+        run: npx @vscode/vsce publish --no-dependencies --pat ${{ secrets.VSCE_PAT }}

@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability.",
   "publisher": "FaizanAshiq",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -115,11 +115,11 @@
       }
     ]
   },
-  "devDependencies": {
-    "vsce": "^2.15.0"
-  },
   "scripts": {
-    "generate": "node generate.js",
-    "pack": "node generate.js && vsce package"
+    "generate": "node src/generate.js",
+    "pack": "node src/generate.js && npx @vscode/vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.7.1"
   }
 }

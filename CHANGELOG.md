@@ -4,6 +4,18 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.5.3] - 2026-02-22
+
+### Fixed
+
+- Panel and tree view containers (Explorer, Source Control, etc.) no longer show a bright accent border when clicking on empty whitespace — focus ring is now subtle and unobtrusive while remaining visible on inputs and interactive controls
+
+### Changed
+
+- CI publishing workflow updated to use `npx @vscode/vsce` directly — removes the need for a separate global install step
+
+---
+
 ## [0.5.2] - 2026-02-22
 
 ### Fixed
