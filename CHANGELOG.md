@@ -2,6 +2,23 @@
 
 All notable changes to "Dev Theme Pro" will be documented in this file.
 
+## [0.5.1] - 2026-02-22
+
+### Changed
+
+- Refined core palette — class/type yellow (`#C2B776` → `#BAAF6D`), function green (`#56C98E` → `#45BF80`), keyword purple (`#A46FED` → `#B070FF`) for better contrast
+- Removed excessive **bold** styling from semantic tokens (variables, properties, keywords, decorators)
+- Focus border made transparent globally; `input.focusBorder` and `dropdown.focusBorder` now carry the accent color independently
+- Updated bracket highlight, symbol icon, chart, and terminal ANSI magenta colors to match refined palette
+
+### Added
+
+- `punctuation.accessor.optional` (optional chaining `?.`) added to keyword scopes
+- Comma separators, type annotations (`keyword.operator.type.annotation`), and key-value separators added to punctuation scopes
+- Enhanced string scopes with `string.quoted.single` and `punctuation.definition.string`
+- Explicit no-bold (`fontStyle: ""`) for all JSON-specific token rules + general `source.json` scope
+- Made `punctuation.separator.inheritance` language-agnostic (was PHP-only)
+
 ## [0.5.0] - 2026-02-15
 
 ### Added
