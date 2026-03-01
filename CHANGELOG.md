@@ -4,6 +4,26 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.5.5] - 2026-03-01
+
+### Added
+
+- **Zen variants** — a borderless, minimal edition of every theme. All UI borders and separator lines are removed, leaving a clean canvas. The active indent guide and active tab indicator are preserved for orientation
+- **Wire variants** — the fully-bordered counterpart to Zen, making the style choice explicit for each accent and depth
+
+### Changed
+
+- **Theme lineup redesigned** — consolidated to two carefully chosen accents:
+  - 🌊 **Ocean** (blue, `#0083CF`)
+  - 🌌 **Nebula** (purple, `#864DEF`)
+    Each accent ships with four depth/style variants: Mist Wire, Mist Zen, Void Wire, Void Zen
+- **Accent text vs accent background split** — accent colors used as foreground (terminal ANSI blue/cyan, links, breadcrumbs, search highlights, symbol icons) are now independently brightened for readability on dark backgrounds, while background usages (buttons, badges, scrollbars, selections) retain the original deeper tone
+- **Floating UI surfaces elevated in Zen variants** — command palette, quick input, menus, hover widgets, suggest widget, and dropdowns use a subtly lighter background in Zen to compensate for the absence of borders
+- **Input fields tinted in Zen variants** — a near-invisible tint distinguishes interactive fields from the editor background
+- **Comment brightness increased** — comment color slightly brightened across all variants for improved readability
+
+---
+
 ## [0.5.4] - 2026-02-22
 
 ### Fixed

@@ -1,41 +1,28 @@
 # Dev Theme Pro 🌌
 
-A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability. **12 variants** — pick your accent color and background depth.
+A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability. **8 variants** — choose your accent color, background depth, and UI style.
 
 <p align="center">
   <img src="images/icon.png" alt="Dev Theme Pro" width="120">
 </p>
 
-![Dev Theme Pro — 4 Accent Variants](images/window/themes.png)
-
 ## Theme Variants
 
-**4 Accents** × **3 Backgrounds** = **12 themes**
+**2 Accents** × **2 Depths** × **2 Styles** = **8 themes**
 
-| Accent     | Dusk 🌅 (lightest) | Night 🌙 (default) | Void 🕳️ (darkest) |
-| ---------- | ------------------ | ------------------ | ----------------- |
-| ✨ Amber   | Amber Dusk         | Amber Night        | Amber Void        |
-| 💎 Emerald | Emerald Dusk       | Emerald Night      | Emerald Void      |
-| 🌌 Nebula  | Nebula Dusk        | Nebula Night       | Nebula Void       |
-| 🌊 Ocean   | Ocean Dusk         | Ocean Night        | Ocean Void        |
+|               | 🌫️ Mist Wire | 🌫️ Mist Zen | 🕳️ Void Wire | 🕳️ Void Zen |
+| ------------- | ------------ | ----------- | ------------ | ----------- |
+| 🌊 **Ocean**  | ✓            | ✓           | ✓            | ✓           |
+| 🌌 **Nebula** | ✓            | ✓           | ✓            | ✓           |
+
+**Wire** — full UI borders and indent guides, traditional structured layout.  
+**Zen** — all borders removed, only the active scope indent line and active tab indicator remain.
 
 ## Screenshots
 
 ### Editor Preview
 
 ![Dev Theme Pro — Editor](images/window/code.jpg)
-
-### Syntax Highlighting
-
-**TypeScript** ![TypeScript](images/typescript.jpg)
-
-**React** ![React](images/react.jpg)
-
-**JavaScript** ![JavaScript](images/javascript.jpg)
-
-**HTML & CSS** ![HTML & CSS](images/html-css.jpg)
-
-**Python** ![Python](images/python.jpg)
 
 ## Installation
 
@@ -54,41 +41,13 @@ A beautiful dark theme with colorful syntax highlighting, designed for developer
 
 ⭐ **Rate five-stars if you enjoy it!**
 
-## Customize Colors
-
-You can override colors in `settings.json` (replace the variant name as needed):
-
-```json
-"workbench.colorCustomizations": {
-  "[Dev Theme Pro — 🌊 Ocean 🌙 Night]": {
-    "editor.background": "#1a1a2e",
-    "sideBar.background": "#1a1a2e"
-  }
-}
-```
-
-### Recommended Settings
+## Recommended Settings
 
 ```json
 "editor.fontFamily": "Lotion, Fira Code, JetBrains Mono",
 "editor.fontLigatures": true,
 "editor.fontSize": 14,
 "editor.lineHeight": 30
-```
-
-### Enable Italics
-
-```json
-"editor.tokenColorCustomizations": {
-  "[Dev Theme Pro — 🌊 Ocean 🌙 Night]": {
-    "textMateRules": [
-      {
-        "scope": ["comment", "keyword", "storage.modifier"],
-        "settings": { "fontStyle": "italic" }
-      }
-    ]
-  }
-}
 ```
 
 ---
@@ -114,5 +73,4 @@ MIT © 2025-2026 Faizan Ashiq - [Full License](LICENSE.txt)
 
 **Enjoying Dev Theme Pro?** ⭐ Star the repo and share feedback!
 
-If you like this theme, please leave a review on the
-[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro).
+If you like this theme, please leave a review on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=FaizanAshiq.dev-theme-pro).

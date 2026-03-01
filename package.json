@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability.",
   "publisher": "FaizanAshiq",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -54,70 +54,50 @@
   "contributes": {
     "themes": [
       {
-        "label": "Dev Theme Pro — ✨ Amber 🌅 Dusk",
+        "label": "Dev Theme Pro — 🌊 Ocean 🌫️ Mist Wire",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-amber-dusk-color-theme.json"
+        "path": "./themes/dev-theme-pro-ocean-mist-wire-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — ✨ Amber 🌙 Night",
+        "label": "Dev Theme Pro — 🌊 Ocean 🌫️ Mist Zen",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-amber-night-color-theme.json"
+        "path": "./themes/dev-theme-pro-ocean-mist-zen-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — ✨ Amber 🕳️ Void",
+        "label": "Dev Theme Pro — 🌊 Ocean 🕳️ Void Wire",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-amber-void-color-theme.json"
+        "path": "./themes/dev-theme-pro-ocean-void-wire-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 💎 Emerald 🌅 Dusk",
+        "label": "Dev Theme Pro — 🌊 Ocean 🕳️ Void Zen",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-emerald-dusk-color-theme.json"
+        "path": "./themes/dev-theme-pro-ocean-void-zen-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 💎 Emerald 🌙 Night",
+        "label": "Dev Theme Pro — 🌌 Nebula 🌫️ Mist Wire",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-emerald-night-color-theme.json"
+        "path": "./themes/dev-theme-pro-nebula-mist-wire-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 💎 Emerald 🕳️ Void",
+        "label": "Dev Theme Pro — 🌌 Nebula 🌫️ Mist Zen",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-emerald-void-color-theme.json"
+        "path": "./themes/dev-theme-pro-nebula-mist-zen-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌌 Nebula 🌅 Dusk",
+        "label": "Dev Theme Pro — 🌌 Nebula 🕳️ Void Wire",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-nebula-dusk-color-theme.json"
+        "path": "./themes/dev-theme-pro-nebula-void-wire-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌌 Nebula 🌙 Night",
+        "label": "Dev Theme Pro — 🌌 Nebula 🕳️ Void Zen",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-nebula-night-color-theme.json"
-      },
-      {
-        "label": "Dev Theme Pro — 🌌 Nebula 🕳️ Void",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-nebula-void-color-theme.json"
-      },
-      {
-        "label": "Dev Theme Pro — 🌊 Ocean 🌅 Dusk",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-ocean-dusk-color-theme.json"
-      },
-      {
-        "label": "Dev Theme Pro — 🌊 Ocean 🌙 Night",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-ocean-night-color-theme.json"
-      },
-      {
-        "label": "Dev Theme Pro — 🌊 Ocean 🕳️ Void",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-ocean-void-color-theme.json"
+        "path": "./themes/dev-theme-pro-nebula-void-zen-color-theme.json"
       }
     ]
   },
   "scripts": {
-    "generate": "node src/generate.js",
-    "pack": "node src/generate.js && npx @vscode/vsce package --no-dependencies"
+    "generate": "node generate.js",
+    "pack": "node generate.js && npx @vscode/vsce package --no-dependencies"
   },
   "dependencies": {
     "@vscode/vsce": "^3.7.1"
