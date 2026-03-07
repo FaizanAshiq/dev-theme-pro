@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability.",
   "publisher": "FaizanAshiq",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -54,44 +54,44 @@
   "contributes": {
     "themes": [
       {
-        "label": "Dev Theme Pro — 🌊 Ocean 🌫️ Mist Wire",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-ocean-mist-wire-color-theme.json"
-      },
-      {
-        "label": "Dev Theme Pro — 🌊 Ocean 🌫️ Mist Zen",
+        "label": "Dev Theme Pro — 🌊 Ocean ☁️ Mist Pure",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-ocean-mist-zen-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌊 Ocean 🕳️ Void Wire",
+        "label": "Dev Theme Pro — 🌊 Ocean ☁️ Mist Wire",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-ocean-void-wire-color-theme.json"
+        "path": "./themes/dev-theme-pro-ocean-mist-wire-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌊 Ocean 🕳️ Void Zen",
+        "label": "Dev Theme Pro — 🌊 Ocean ✨ Void Pure",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-ocean-void-zen-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌌 Nebula 🌫️ Mist Wire",
+        "label": "Dev Theme Pro — 🌊 Ocean ✨ Void Wire",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-nebula-mist-wire-color-theme.json"
+        "path": "./themes/dev-theme-pro-ocean-void-wire-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌌 Nebula 🌫️ Mist Zen",
+        "label": "Dev Theme Pro — 🔮 Nebula ☁️ Mist Pure",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-nebula-mist-zen-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌌 Nebula 🕳️ Void Wire",
+        "label": "Dev Theme Pro — 🔮 Nebula ☁️ Mist Wire",
         "uiTheme": "vs-dark",
-        "path": "./themes/dev-theme-pro-nebula-void-wire-color-theme.json"
+        "path": "./themes/dev-theme-pro-nebula-mist-wire-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌌 Nebula 🕳️ Void Zen",
+        "label": "Dev Theme Pro — 🔮 Nebula ✨ Void Pure",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-nebula-void-zen-color-theme.json"
+      },
+      {
+        "label": "Dev Theme Pro — 🔮 Nebula ✨ Void Wire",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dev-theme-pro-nebula-void-wire-color-theme.json"
       }
     ]
   },

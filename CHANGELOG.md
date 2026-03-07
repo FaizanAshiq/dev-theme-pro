@@ -4,6 +4,24 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.5.6] - 2026-03-07
+
+### Fixed
+
+- **Input fields in chat and overlapping panels** — input boxes no longer look faded or washed out when layered inside panels like the AI chat view
+- **Floating panel shadows in Zen variants** — the command palette, suggestion dropdown, hover tooltips, and similar floating panels now cast a stronger shadow, making them easier to distinguish from the editor behind them
+- **Breadcrumb shadow removed** — the shadow line below the breadcrumb navigation bar is gone for a cleaner, flatter look
+- **Autocomplete dropdown border in Zen** — the suggestion popup now has a visible border in Zen mode, just like Wire
+- **Inlay hint and hover popup borders** — type hints and hover tooltips now always show a subtle border regardless of the active style variant
+
+### Changed
+
+- **Input field contrast** — in Zen variants, inputs are now tinted for better separation from the editor: slightly darker in Mist and slightly lighter in Void, matching the background depth
+- **Selection highlight unified across all areas** — the focused/selected row in the file tree, command palette, and autocomplete dropdown now all use the same accent-tinted highlight, giving the UI a consistent, intentional look
+- **Theme variant names refreshed** — the borderless style is now called **Pure** (was Zen), sorting it before Wire in the picker. Theme icons updated: ☁️ Mist, ✨ Void, 🔮 Nebula
+
+---
+
 ## [0.5.5] - 2026-03-01
 
 ### Added
