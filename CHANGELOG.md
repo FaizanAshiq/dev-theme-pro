@@ -4,6 +4,25 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.5.7] - 2026-03-14
+
+### Fixed
+
+- **Input fields now match across Pure and Wire** — chat boxes, search inputs, and other text fields now use the same depth-based surface in both styles, so they feel consistent no matter which variant you pick
+- **Input outlines are gone** — text fields no longer draw borders or focus rings, keeping search, chat, and settings inputs visually clean
+- **Floating windows stand apart more clearly** — overlays now cast a stronger shadow, making layered UI easier to separate from the editor behind it
+- **Pure overlays read more cleanly over code** — floating windows in Pure mode now cast a much deeper shadow so they no longer blend into the editor text underneath
+- **Inputs and floating widgets have clearer separation** — Mist inputs now sit a little deeper, Void inputs a little brighter, and floating pickers/widgets are lifted slightly so each layer reads more distinctly
+- **Settings inputs now follow the theme surface tone** — the search box, dropdowns, and text inputs in Settings now use the same theme-controlled input background as the rest of the UI
+- **Checkboxes and UI lines now match the theme surface system** — checkbox fills now use the shared control surface, and border intensity across Wire and Pure is driven from one central set of per-variant values for a cleaner, more consistent frame
+
+### Changed
+
+- **Theme lineup now focuses on Mist and Void** — the style split has been removed for now, leaving one Mist and one Void theme per accent for a simpler picker
+- **Border tuning is now easier to edit directly** — each depth now carries its own chrome controls in the generator, so line, border, and guide strength can be adjusted in one place while you iterate
+- **Theme picker now groups by depth** — Mist variants are listed together first, followed by Void, so the chooser reads Ocean Mist, Nebula Mist, Ocean Void, Nebula Void
+- **Focused rows and hover popups read more clearly** — active list states now use richer accent-tinted backgrounds, and hover cards sit slightly more lifted so focused and hovered actions are easier to pick out
+
 ## [0.5.6] - 2026-03-07
 
 ### Fixed
