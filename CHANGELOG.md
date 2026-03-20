@@ -4,40 +4,41 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.5.8] - 2026-03-20
+
+### Fixed
+
+- **Settings rows no longer show a focus border** — removed the accent outline from the active row in the Settings editor
+- **Source Control history is easier to scan** — branch refs, remote refs, and graph hover labels now read more clearly at a glance
+
+---
+
 ## [0.5.7] - 2026-03-14
 
 ### Fixed
 
-- **Input fields now match across Pure and Wire** — chat boxes, search inputs, and other text fields now use the same depth-based surface in both styles, so they feel consistent no matter which variant you pick
-- **Input outlines are gone** — text fields no longer draw borders or focus rings, keeping search, chat, and settings inputs visually clean
-- **Floating windows stand apart more clearly** — overlays now cast a stronger shadow, making layered UI easier to separate from the editor behind it
-- **Pure overlays read more cleanly over code** — floating windows in Pure mode now cast a much deeper shadow so they no longer blend into the editor text underneath
-- **Inputs and floating widgets have clearer separation** — Mist inputs now sit a little deeper, Void inputs a little brighter, and floating pickers/widgets are lifted slightly so each layer reads more distinctly
-- **Settings inputs now follow the theme surface tone** — the search box, dropdowns, and text inputs in Settings now use the same theme-controlled input background as the rest of the UI
-- **Checkboxes and UI lines now match the theme surface system** — checkbox fills now use the shared control surface, and border intensity across Wire and Pure is driven from one central set of per-variant values for a cleaner, more consistent frame
+- **Inputs feel more consistent across the UI** — chat, search, Settings, and other text fields now share the same depth-based surface treatment in Pure and Wire, with outlines removed for a cleaner look
+- **Floating surfaces separate more clearly** — stronger shadows, deeper Mist inputs, brighter Void inputs, and slightly lifted pickers/widgets make layered UI easier to read
+- **Settings and controls now follow the same surface system** — Settings inputs, checkbox fills, and surrounding UI lines now use the shared theme surface and border tuning for a cleaner, more consistent frame
 
 ### Changed
 
-- **Theme lineup now focuses on Mist and Void** — the style split has been removed for now, leaving one Mist and one Void theme per accent for a simpler picker
-- **Border tuning is now easier to edit directly** — each depth now carries its own chrome controls in the generator, so line, border, and guide strength can be adjusted in one place while you iterate
-- **Theme picker now groups by depth** — Mist variants are listed together first, followed by Void, so the chooser reads Ocean Mist, Nebula Mist, Ocean Void, Nebula Void
-- **Focused rows and hover popups read more clearly** — active list states now use richer accent-tinted backgrounds, and hover cards sit slightly more lifted so focused and hovered actions are easier to pick out
+- **Theme selection is simpler** — the lineup now focuses on Mist and Void, grouped by depth in the picker as Ocean Mist, Nebula Mist, Ocean Void, and Nebula Void
+- **Focused rows and hover popups read more clearly** — active list states use richer accent-tinted backgrounds, and hover cards sit slightly higher above the editor
 
 ## [0.5.6] - 2026-03-07
 
 ### Fixed
 
-- **Input fields in chat and overlapping panels** — input boxes no longer look faded or washed out when layered inside panels like the AI chat view
-- **Floating panel shadows in Zen variants** — the command palette, suggestion dropdown, hover tooltips, and similar floating panels now cast a stronger shadow, making them easier to distinguish from the editor behind them
-- **Breadcrumb shadow removed** — the shadow line below the breadcrumb navigation bar is gone for a cleaner, flatter look
-- **Autocomplete dropdown border in Zen** — the suggestion popup now has a visible border in Zen mode, just like Wire
-- **Inlay hint and hover popup borders** — type hints and hover tooltips now always show a subtle border regardless of the active style variant
+- **Layered inputs no longer look washed out** — chat and other overlapping input fields now keep their intended surface contrast
+- **Floating UI is easier to distinguish in Zen** — command palette, suggestions, and hover popups now use stronger separation with clearer shadows and borders where needed
+- **Small visual distractions are removed** — the breadcrumb shadow is gone, while autocomplete, inlay hints, and hover popups now keep consistent borders
 
 ### Changed
 
-- **Input field contrast** — in Zen variants, inputs are now tinted for better separation from the editor: slightly darker in Mist and slightly lighter in Void, matching the background depth
-- **Selection highlight unified across all areas** — the focused/selected row in the file tree, command palette, and autocomplete dropdown now all use the same accent-tinted highlight, giving the UI a consistent, intentional look
-- **Theme variant names refreshed** — the borderless style is now called **Pure** (was Zen), sorting it before Wire in the picker. Theme icons updated: ☁️ Mist, ✨ Void, 🔮 Nebula
+- **Zen input contrast is better balanced** — inputs are now tinted to separate more clearly from the editor in both Mist and Void
+- **Selection highlights are now unified** — focused rows in the tree, command palette, and autocomplete all use the same accent-tinted highlight
+- **Variant naming is cleaner** — Zen is now called Pure, and the theme icons were refreshed for Mist, Void, and Nebula
 
 ---
 
@@ -45,19 +46,14 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **Zen variants** — a borderless, minimal edition of every theme. All UI borders and separator lines are removed, leaving a clean canvas. The active indent guide and active tab indicator are preserved for orientation
-- **Wire variants** — the fully-bordered counterpart to Zen, making the style choice explicit for each accent and depth
+- **Zen variants** — a borderless version of every theme with separators removed, while keeping the active indent guide and active tab indicator for orientation
+- **Wire variants** — a fully bordered counterpart to Zen for each accent and depth
 
 ### Changed
 
-- **Theme lineup redesigned** — consolidated to two carefully chosen accents:
-  - 🌊 **Ocean** (blue, `#0083CF`)
-  - 🌌 **Nebula** (purple, `#864DEF`)
-    Each accent ships with four depth/style variants: Mist Wire, Mist Zen, Void Wire, Void Zen
-- **Accent text vs accent background split** — accent colors used as foreground (terminal ANSI blue/cyan, links, breadcrumbs, search highlights, symbol icons) are now independently brightened for readability on dark backgrounds, while background usages (buttons, badges, scrollbars, selections) retain the original deeper tone
-- **Floating UI surfaces elevated in Zen variants** — command palette, quick input, menus, hover widgets, suggest widget, and dropdowns use a subtly lighter background in Zen to compensate for the absence of borders
-- **Input fields tinted in Zen variants** — a near-invisible tint distinguishes interactive fields from the editor background
-- **Comment brightness increased** — comment color slightly brightened across all variants for improved readability
+- **Theme lineup was redesigned** — the extension now centers on Ocean and Nebula, each available in Mist Wire, Mist Zen, Void Wire, and Void Zen
+- **Accent usage is more readable** — accent text is brighter on dark surfaces, while accent backgrounds keep a deeper tone for buttons, badges, scrollbars, and selections
+- **Zen surfaces read more clearly** — floating UI is slightly elevated, inputs carry a subtle tint, and comments are a bit brighter across all variants
 
 ---
 
@@ -65,7 +61,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- Panel and tree view containers (Explorer, Source Control, etc.) no longer show a focus border when clicked — large view containers now behave like native panels, with the focus ring reserved for interactive controls like inputs and buttons
+- **Panel focus borders are gone** — Explorer, Source Control, and other large containers now behave like native panels, leaving focus rings for interactive controls instead
 
 ---
 
@@ -73,8 +69,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Changed
 
-- CI publishing workflow updated to use `npx @vscode/vsce` directly — removes the need for a separate global install step
-- npm scripts corrected — `generate` and `pack` now point to the correct `src/generate.js` path and use `npx @vscode/vsce`
+- **Packaging and publishing scripts were corrected** — CI and npm scripts now use `npx @vscode/vsce` directly and point to the right generator path
 
 ---
 
@@ -83,54 +78,18 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 ### Fixed
 
 - **Focus borders now correctly show the accent color** — focused inputs, dropdowns, buttons, and widgets all highlight with your chosen accent. Previously focus borders were invisible across the entire UI
-- Extension marketplace buttons now use the full accent color instead of a faded tint
-- Toolbar hover and active states were not using accent — now consistent with the rest of the UI
+- **Accent-driven controls are more consistent** — marketplace buttons now use the full accent color, and toolbar hover and active states match the rest of the UI
 
 ### Added
 
-- **Python syntax highlighting** — comprehensive coverage added:
-  - Keywords and control flow (`if`, `for`, `with`, `yield`, `async`, etc.)
-  - Built-in functions (`print`, `len`, `range`, `super`, `isinstance`, etc.)
-  - Built-in types (`int`, `str`, `list`, `dict`, `bool`, etc.)
-  - Class names, function and method definitions
-  - Decorators (`@property`, `@staticmethod`, custom decorators)
-  - Magic methods (`__init__`, `__str__`, `__repr__`, etc.) and magic variables (`__name__`, `__all__`, etc.)
-  - `self` and `cls` parameters
-  - Exception types, `True` / `False` / `None` constants
-  - Type annotations and f-string format specs
-
-- **Broader UI accent coverage** — the following UI elements now correctly pick up the accent color:
-  - Checkboxes (background, foreground, border)
-  - Toolbar hover and active backgrounds
-  - Settings editor focused row border
-  - Search editor text input border
-  - Extension button separator and foreground
-  - Input option hover background (now subtler, was too heavy)
+- **Python syntax highlighting** — added broad coverage for keywords, built-ins, types, classes, functions, decorators, magic members, `self` and `cls`, constants, type annotations, and f-string format specs
+- **Broader UI accent coverage** — checkboxes, toolbar states, Settings focused rows, Search input borders, extension buttons, and input option hover states now pick up the accent more consistently
 
 ### Changed
 
-- **HTML highlighting improvements:**
-  - Tag punctuation (`<`, `>`) de-emphasized to reduce visual noise
-  - Attribute `=` signs dimmed — distinct from attribute names and values
-  - HTML entities colored consistently as values
-  - `<!DOCTYPE>` de-emphasized as boilerplate
-  - Embedded `<script>` and `<style>` tag names colored as keywords to signal a language boundary
-  - Quote punctuation around attribute values colored consistently with string quotes
-
-- **CSS / SCSS / Less highlighting improvements:**
-  - Property names given a distinct color — no longer the same as generic variables
-  - Units (`px`, `em`, `rem`, `%`, `vh`, etc.) individually colored
-  - At-rules (`@media`, `@keyframes`, `@import`, `@mixin`, etc.) colored as keywords
-  - `!important` colored red and bold
-  - CSS functions (`rgb()`, `var()`, `calc()`, `linear-gradient()`, etc.) colored green
-  - CSS custom properties (`--variable`) colored distinctly with italic
-  - SCSS variables (`$var`) and Less variables (`@var`) colored as module references
-  - SCSS interpolation brackets `#{...}` colored as keywords
-  - ID selectors fixed — previously mapped to the wrong scope
-  - Class selector color slightly desaturated for a more balanced palette
-  - Vendor-prefixed property names covered
-
-- Default fallback text color updated to a neutral grey — plain unscoped text now looks balanced across all languages
+- **HTML highlighting is cleaner** — tag punctuation, `=` signs, entities, `<!DOCTYPE>`, embedded script/style tags, and attribute quote punctuation now read more consistently
+- **CSS, SCSS, and Less highlighting is broader** — property names, units, at-rules, `!important`, functions, custom properties, variables, interpolation, ID selectors, class selectors, and vendor-prefixed properties now have clearer coverage and balance
+- **Fallback text color is more neutral** — plain unscoped text now feels more balanced across languages
 
 ---
 
@@ -138,17 +97,13 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Changed
 
-- Core syntax palette tuned — class/type, function, and keyword hues adjusted for improved contrast and visual separation
-- Reduced over-use of bold — variables, properties, and keywords are no longer bold by default, keeping bold reserved for truly important distinctions (classes, decorators, `!important`)
-- Updated bracket pair colors, symbol icons, chart colors, and terminal ANSI palette to match the refined hues
+- **Core syntax colors were refined** — class, type, function, and keyword hues now separate more clearly
+- **Bold is used more selectively** — variables, properties, and keywords are no longer bold by default, leaving stronger emphasis for classes, decorators, and `!important`
+- **Supporting UI colors were aligned** — bracket pairs, symbol icons, charts, and terminal ANSI colors now match the refined palette
 
 ### Added
 
-- Optional chaining (`?.`) now correctly highlighted as a keyword operator
-- Type annotation operators, comma separators, and key-value separators all highlighted consistently
-- Single-quoted strings and their surrounding punctuation now covered
-- JSON values no longer incorrectly rendered bold
-- `extends` / `implements` inheritance separators now language-agnostic
+- **More syntax details are covered** — optional chaining, type annotation operators, separators, single-quoted strings, JSON values, and `extends` / `implements` now highlight more consistently
 
 ---
 
@@ -156,20 +111,17 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **12 theme variants** — choose your accent and background depth independently:
-  - Accents: 🌊 Ocean · 🌌 Nebula · 💎 Emerald · ✨ Amber
-  - Backgrounds: 🌅 Dusk (lighter) · 🌙 Night (default) · 🕳️ Void (darkest)
-- Floating panels and inlay hints automatically use a subtly elevated background tone per variant
+- **12 theme variants** — mix four accents with three background depths: Ocean, Nebula, Emerald, and Amber across Dusk, Night, and Void
+- **Floating surfaces adapt to each variant** — panels and inlay hints automatically use a subtly elevated background tone
 
 ### Changed
 
-- Decorators are now blue and bold — visually distinct from functions (green) and classes (yellow)
-- React and Vue component tags styled consistently with decorators (blue bold)
-- Class constructors no longer incorrectly colored as functions
+- **Decorators stand out more clearly** — they are now blue and bold, with React and Vue component tags styled to match
+- **Constructors are colored correctly** — class constructors no longer appear as functions
 
 ### Fixed
 
-- Floating widget backgrounds now correctly reflect the current background depth variant
+- **Floating widget backgrounds now match the selected depth** — each variant carries the right background tone into floating UI
 
 ---
 
@@ -177,23 +129,18 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **4 accent color variants**: 🌊 Ocean, 🌌 Nebula, 💎 Emerald, ✨ Amber
-- Full accent propagation across all UI surfaces — status bar, activity bar, badges, buttons, scrollbars, diff gutter, minimap, breadcrumbs, and more
-- Rich semantic highlighting for near-instant coloring on file open (no color flash)
-- React and Vue component tag styling (blue bold)
-- New extension icon
+- **4 accent variants** — Ocean, Nebula, Emerald, and Amber
+- **Accent color now reaches the full UI** — status bar, activity bar, badges, buttons, scrollbars, diff gutter, minimap, breadcrumbs, and more all follow the chosen accent
+- **Semantic highlighting was added** — files now color in almost instantly on open, with React and Vue component tags styled distinctly and a new extension icon included
 
 ### Fixed
 
-- Color flash on file open eliminated — TextMate and semantic token colors now aligned
-- Terminal ANSI magenta corrected to purple
-- Scrollbar, selection highlight, and inlay hint color fixes
+- **File-open color flash is gone** — TextMate and semantic token colors now align
+- **Several UI colors were corrected** — terminal magenta, scrollbars, selection highlights, and inlay hints now render more consistently
 
 ### Improved
 
-- Git decoration colors redesigned for clarity
-- File list selection and hover states modernized
-- Focus border balance improved across the UI
+- **Git and list states are clearer** — git decorations, file list selection and hover states, and focus border balance were all improved
 
 ---
 
@@ -201,14 +148,9 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- Input box borders now visible in Copilot Chat, the Search panel, Find widget, and all other inputs
-- Find match highlights — current match and other matches are now clearly distinct
-- Badge pills now have a visible background (were transparent — text appeared floating)
-- List hover and active selection highlights now clearly visible
-- Settings modified indicator no longer blends into the foreground text
-- Inactive selection highlight fixed (previously had a red tint, looked like an error)
-- Editor rulers no longer blindingly bright at full opacity
-- Panel drop overlay, menu separators, and list hover backgrounds all corrected
+- **Core UI visibility issues were fixed** — input borders now show correctly in chat, search, find, and other inputs, and current versus other find matches are easier to distinguish
+- **Selection and status states are clearer** — badge pills, list hover and active states, the Settings modified indicator, and inactive selection highlights now read properly
+- **Several harsh or incorrect UI colors were corrected** — editor rulers, panel drop overlays, menu separators, and list hover backgrounds now feel balanced
 - Inlay hints no longer create harsh dark slots behind them
 
 ### Added

@@ -44,6 +44,7 @@ Dev Theme Pro is not just another dark theme. Every color, every border, every s
 
 - **Syntax colors that mean something** — keywords, functions, types, strings, constants — each has its own deliberate color. No guessing what you're looking at.
 - **Consistent UI-wide accent** — the selected file in the tree, the focused item in the command palette, the highlighted row in autocomplete — all use the exact same accent highlight. No visual inconsistency anywhere.
+- **Git views stay readable** — file status colors, diff highlights, and the Source Control history graph all stay aligned with the theme instead of falling back to generic defaults.
 - **Inlay hints and hover popups done right** — they match the editor background and define themselves with a subtle border, not by screaming with a different color. Clean and readable.
 - **Every detail considered** — scrollbars, diff gutter, git status, terminal colors, bracket highlights, minimap, diagnostics — nothing is left at a default.
 
@@ -53,7 +54,7 @@ Dev Theme Pro is not just another dark theme. Every color, every border, every s
 
 ### Editor Preview
 
-![Dev Theme Pro — Editor](images/window/code.jpg)
+![Dev Theme Pro — Editor](images/code.jpg)
 
 ---
 
