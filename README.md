@@ -14,7 +14,7 @@ Dev Theme Pro started as a theme obsession. It now ships the tools you keep reac
 
 | Area           | What you get                                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **Theme**      | Four tuned dark variants with deliberate syntax color, cleaner UI contrast, and a consistent accent across the workbench |
+| **Theme**      | Six tuned dark variants with deliberate syntax color, cleaner UI contrast, and matching accents across the workbench and previews |
 | **Markdown**   | Rich preview, Mermaid rendering, table of contents, presentation mode, and one-click PDF/HTML export                     |
 | **Data Files** | CSV/TSV preview with sorting, filtering, column resize, row numbers, and export to PDF/PNG/HTML                          |
 | **Sharing**    | Live code snapshot preview with retina PNG export and whole-file fallback when nothing is selected                       |
@@ -32,14 +32,16 @@ Dev Theme Pro started as a theme obsession. It now ships the tools you keep reac
 
 ## Pick Your Variant
 
-Dev Theme Pro currently ships four theme variants:
+Dev Theme Pro currently ships six theme variants:
 
 - **Ocean Mist** — calm blue accent on the lighter dark base
 - **Nebula Mist** — richer purple accent on the lighter dark base
-- **Ocean Void** — deeper contrast with the blue accent
-- **Nebula Void** — deeper contrast with the purple accent
+- **Solar Mist** — warm yellow accent on the lighter dark base
+- **Ocean Void** — the deepest dark base with the blue accent
+- **Nebula Void** — the deepest dark base with the purple accent
+- **Solar Void** — the deepest dark base with the yellow accent
 
-If you want a quick default: **Mist** is easier on long sessions, and **Void** feels tighter and more contrast-heavy.
+If you want a quick default: **Mist** is easiest on long sessions, **Void** is now the deepest canvas in the lineup, and every preview follows the active variant instead of falling back to a fixed accent.
 
 ---
 

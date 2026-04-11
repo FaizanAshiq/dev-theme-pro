@@ -4,6 +4,21 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.6.1] - 2026-04-11
+
+### Added
+
+- **Solar accent variants** — the warm yellow option now ships in both Mist and Void, so you can keep the same accent while choosing between the lighter and deepest dark base
+
+### Changed
+
+- **Previews now match the active variant** — Markdown, tables, Mermaid exports, and code snapshots now follow Ocean, Nebula, or Solar instead of staying locked to one accent
+- **Solar is a little softer on the eyes** — the yellow accent was darkened slightly so highlights feel smoother without changing the overall character of the variant
+- **Void now uses the deepest dark base** — the old deepest canvas is now the standard Void backdrop, with inputs kept slightly lighter so fields still separate cleanly
+- **Mist inputs are now pure black** — form fields and similar controls sit darker against the lighter Mist canvas for stronger separation
+
+---
+
 ## [0.6.0] - 2026-04-11
 
 ### Added

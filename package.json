@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "A polished dark theme with built-in Markdown preview, Mermaid-friendly PDF export, CSV tools, and code snapshots.",
   "publisher": "FaizanAshiq",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -83,13 +83,13 @@
       },
       {
         "command": "devThemePro.openCsvPreview",
-        "title": "📊 Open CSV Preview to the Side",
+        "title": "📊 Open Table Preview to the Side",
         "category": "Dev Theme Pro",
         "icon": "$(open-preview)"
       },
       {
         "command": "devThemePro.openCsvPreviewInPlace",
-        "title": "📊 Open CSV Preview",
+        "title": "📊 Open Table Preview",
         "category": "Dev Theme Pro",
         "icon": "$(table)"
       },
@@ -380,6 +380,11 @@
         "path": "./themes/dev-theme-pro-nebula-mist-color-theme.json"
       },
       {
+        "label": "Dev Theme Pro — ☀️ Solar ☁️ Mist",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dev-theme-pro-solar-mist-color-theme.json"
+      },
+      {
         "label": "Dev Theme Pro — 🌊 Ocean ✨ Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-ocean-void-color-theme.json"
@@ -388,6 +393,11 @@
         "label": "Dev Theme Pro — 🔮 Nebula ✨ Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-nebula-void-color-theme.json"
+      },
+      {
+        "label": "Dev Theme Pro — ☀️ Solar ✨ Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dev-theme-pro-solar-void-color-theme.json"
       }
     ]
   },
