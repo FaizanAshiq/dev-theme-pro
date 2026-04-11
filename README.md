@@ -49,11 +49,12 @@ Open any Markdown file in a Dev Theme Pro reading view that actually feels finis
 
 ### Open It Your Way
 
-| Action                        | How                                                                                |
-| ----------------------------- | ---------------------------------------------------------------------------------- |
-| Preview to the side           | Click the preview button in the editor title bar, or press `Cmd+K V` / `Ctrl+K V`  |
-| Preview in the current editor | Click the render button in the title bar, or press `Cmd+K Cmd+V` / `Ctrl+K Ctrl+V` |
-| Open With                     | Right-click the file tab and choose **Open With… → Dev Theme Pro**                 |
+| Action                        | How                                                                                                      |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Preview to the side           | Click the preview button in the editor title bar, or press `Cmd+K V` / `Ctrl+K V`                        |
+| Preview in the current editor | Click the render button in the title bar, or press `Cmd+K Cmd+V` / `Ctrl+K Ctrl+V`                       |
+| Open With picker              | Right-click the file in the Explorer and choose **Open With… → 🔮 Dev Theme Pro Markdown Preview**       |
+| Right-click shortcut          | Right-click the file in the Explorer or the editor tab and choose **🔮 Open With Dev Theme Pro Preview** |
 
 ### What You Get
 
@@ -68,9 +69,18 @@ PDF export uses Chrome or Chromium automatically. If VS Code cannot find it, set
 
 ---
 
-## CSV / TSV Preview
+## CSV / TSV / PSV Preview
 
 Open `.csv`, `.tsv`, or `.psv` files in a table view that is built for real inspection work, not just quick glances.
+
+### Open It Your Way
+
+| Action               | How                                                                                                            |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Preview to the side  | Click the table preview button in the editor title bar, or press `Cmd+K V` / `Ctrl+K V`                        |
+| Preview in place     | Use `Cmd+K Cmd+V` / `Ctrl+K Ctrl+V` on a table file                                                            |
+| Open With picker     | Right-click the file in the Explorer and choose **Open With… → 🔮 Dev Theme Pro Table Preview**                |
+| Right-click shortcut | Right-click the file in the Explorer or the editor tab and choose **🔮 Open With Dev Theme Pro Table Preview** |
 
 | Feature       | What it does                                            |
 | ------------- | ------------------------------------------------------- |
@@ -114,8 +124,10 @@ All commands are also available from the **Command Palette**. Search for **Dev T
 All extension features are grouped under a single **🔮 Dev Theme Pro** submenu in the editor context menu.
 
 - **Markdown files** — open preview, export PDF, export HTML
-- **CSV/TSV files** — open preview, export PDF/PNG/HTML
+- **CSV/TSV/PSV files** — open preview, export PDF/PNG/HTML
 - **Code files** — create a code snapshot
+
+Preview files also show up with matching **🔮 Dev Theme Pro** labels in the Explorer **Open With…** picker and in editor-tab right-click actions.
 
 ---
 

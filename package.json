@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "A polished dark theme with built-in Markdown preview, Mermaid-friendly PDF export, CSV tools, and code snapshots.",
   "publisher": "FaizanAshiq",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -76,6 +76,12 @@
         "icon": "$(notebook-render-output)"
       },
       {
+        "command": "devThemePro.openMarkdownWith",
+        "title": "🔮 Open With Dev Theme Pro Preview",
+        "category": "Dev Theme Pro",
+        "icon": "$(preview)"
+      },
+      {
         "command": "devThemePro.openCsvPreview",
         "title": "📊 Open CSV Preview to the Side",
         "category": "Dev Theme Pro",
@@ -84,6 +90,12 @@
       {
         "command": "devThemePro.openCsvPreviewInPlace",
         "title": "📊 Open CSV Preview",
+        "category": "Dev Theme Pro",
+        "icon": "$(table)"
+      },
+      {
+        "command": "devThemePro.openTableWith",
+        "title": "🔮 Open With Dev Theme Pro Table Preview",
         "category": "Dev Theme Pro",
         "icon": "$(table)"
       },
@@ -197,6 +209,30 @@
           "group": "1_devThemePro"
         }
       ],
+      "explorer/context": [
+        {
+          "command": "devThemePro.openMarkdownWith",
+          "when": "resourceExtname == .md",
+          "group": "navigation@2"
+        },
+        {
+          "command": "devThemePro.openTableWith",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "group": "navigation@2"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "devThemePro.openMarkdownWith",
+          "when": "resourceExtname == .md",
+          "group": "navigation@2"
+        },
+        {
+          "command": "devThemePro.openTableWith",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "group": "navigation@2"
+        }
+      ],
       "devThemePro.tools": [
         {
           "command": "devThemePro.openPreview",
@@ -254,6 +290,10 @@
           "when": "editorLangId == markdown"
         },
         {
+          "command": "devThemePro.openMarkdownWith",
+          "when": "editorLangId == markdown"
+        },
+        {
           "command": "devThemePro.exportPdf",
           "when": "editorLangId == markdown"
         },
@@ -271,6 +311,10 @@
         },
         {
           "command": "devThemePro.openCsvPreviewInPlace",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+        },
+        {
+          "command": "devThemePro.openTableWith",
           "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
         },
         {
@@ -299,7 +343,7 @@
     "customEditors": [
       {
         "viewType": "devThemePro.markdownPreview",
-        "displayName": "Dev Theme Pro",
+        "displayName": "🔮 Dev Theme Pro Markdown Preview",
         "selector": [
           {
             "filenamePattern": "*.md"
@@ -309,7 +353,7 @@
       },
       {
         "viewType": "devThemePro.csvPreview",
-        "displayName": "Dev Theme Pro (CSV)",
+        "displayName": "🔮 Dev Theme Pro Table Preview",
         "selector": [
           {
             "filenamePattern": "*.csv"

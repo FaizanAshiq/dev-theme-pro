@@ -4,6 +4,19 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.6.0] - 2026-04-11
+
+### Added
+
+- **Open With support for every preview type** — Markdown, CSV, TSV, and PSV files now surface a Dev Theme Pro preview option in VS Code's Open With flow
+- **Right-click preview shortcuts in more places** — Explorer and editor-tab menus now let you reopen supported files straight into the matching Dev Theme Pro preview
+
+### Changed
+
+- **Preview labels are now more consistent** — Markdown and table previews now use the same 🔮 Dev Theme Pro naming across menus and picker entries
+
+---
+
 ## [0.5.9] - 2026-04-11
 
 ### Added
