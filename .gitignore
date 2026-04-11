@@ -1,7 +1,24 @@
+# ── Packages & build artifacts ──
 *.vsix
-node_modules
+node_modules/
+out/*.map
+media/preview.css
+
+# ── Source & build scripts (private) ──
+src/
+generate.js
+build-preview-css.js
+esbuild.js
+tsconfig.json
+media/preview-theme.less
+
+# ── Dev-only files ──
 samples/
 *DE.md
 copilot-instructions.md
-src/
 .vscode/
+
+# ── OS / Editor junk ──
+.DS_Store
+*.log
+backup/

@@ -13,6 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout private src repo
+        uses: actions/checkout@v4
+        with:
+          repository: FaizanAshiq/src
+          path: src
+          token: ${{ secrets.SRC_REPO_TOKEN }}
+          fetch-depth: 1
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -20,13 +28,21 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Build preview CSS
+        run: npm run build:css
+
+      - name: Verify built outputs exist
+        run: |
+          echo "Version: $(node -p "require('./package.json').version")"
+          test -f out/extension.js || { echo '❌ out/extension.js missing — run npm run pack locally first'; exit 1; }
+          test -f media/preview.css || { echo '❌ media/preview.css missing — run npm run pack locally first'; exit 1; }
+          ls themes/*.json > /dev/null 2>&1 || { echo '❌ theme JSONs missing — run npm run pack locally first'; exit 1; }
+          echo '✓ All built outputs present'
 
       - name: Package extension
-        run: |
-          echo "Publishing version:"
-          node -p "require('./package.json').version"
-          npx @vscode/vsce package --no-dependencies
+        run: npx @vscode/vsce@latest package --no-dependencies
 
       - name: Publish to marketplace
-        run: npx @vscode/vsce publish --no-dependencies --pat ${{ secrets.VSCE_PAT }}
+        run: npx @vscode/vsce@latest publish --no-dependencies --pat ${{ secrets.VSCE_PAT }}

@@ -1,9 +1,9 @@
 {
   "name": "dev-theme-pro",
   "displayName": "Dev Theme Pro",
-  "description": "A beautiful dark theme with colorful syntax highlighting, designed for developers who love aesthetics and readability.",
+  "description": "A polished dark theme with built-in Markdown preview, Mermaid-friendly PDF export, CSV tools, and code snapshots.",
   "publisher": "FaizanAshiq",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -13,6 +13,10 @@
   "engines": {
     "vscode": "^1.85.0"
   },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/FaizanAshiq/dev-theme-pro.git"
@@ -46,12 +50,280 @@
     "purple",
     "aesthetic",
     "eye care",
-    "productivity"
+    "productivity",
+    "markdown preview",
+    "pdf export",
+    "mermaid",
+    "csv viewer",
+    "code snapshot"
   ],
   "categories": [
-    "Themes"
+    "Themes",
+    "Other"
   ],
   "contributes": {
+    "commands": [
+      {
+        "command": "devThemePro.openPreview",
+        "title": "📄 Open Preview to the Side",
+        "category": "Dev Theme Pro",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "devThemePro.openPreviewInPlace",
+        "title": "📄 Open Preview",
+        "category": "Dev Theme Pro",
+        "icon": "$(notebook-render-output)"
+      },
+      {
+        "command": "devThemePro.openCsvPreview",
+        "title": "📊 Open CSV Preview to the Side",
+        "category": "Dev Theme Pro",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "devThemePro.openCsvPreviewInPlace",
+        "title": "📊 Open CSV Preview",
+        "category": "Dev Theme Pro",
+        "icon": "$(table)"
+      },
+      {
+        "command": "devThemePro.exportPdf",
+        "title": "📥 Export as PDF",
+        "category": "Dev Theme Pro",
+        "icon": "$(desktop-download)"
+      },
+      {
+        "command": "devThemePro.exportHtml",
+        "title": "🌐 Export as HTML",
+        "category": "Dev Theme Pro",
+        "icon": "$(file-code)"
+      },
+      {
+        "command": "devThemePro.codeSnapshot",
+        "title": "📸 Code Snapshot",
+        "category": "Dev Theme Pro",
+        "icon": "$(device-camera)"
+      },
+      {
+        "command": "devThemePro.exportDiagram",
+        "title": "📊 Export Diagram",
+        "category": "Dev Theme Pro",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "devThemePro.exportCsvPng",
+        "title": "📸 Export Table as PNG",
+        "category": "Dev Theme Pro",
+        "icon": "$(device-camera)"
+      },
+      {
+        "command": "devThemePro.exportCsvHtml",
+        "title": "🌐 Export Table as HTML",
+        "category": "Dev Theme Pro",
+        "icon": "$(file-code)"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "devThemePro.tools",
+        "label": "🔮 Dev Theme Pro",
+        "icon": "$(tools)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "devThemePro.openPreview",
+        "key": "ctrl+k v",
+        "mac": "cmd+k v",
+        "when": "editorLangId == markdown"
+      },
+      {
+        "command": "devThemePro.openPreviewInPlace",
+        "key": "ctrl+k ctrl+v",
+        "mac": "cmd+k cmd+v",
+        "when": "editorLangId == markdown"
+      },
+      {
+        "command": "devThemePro.openCsvPreview",
+        "key": "ctrl+k v",
+        "mac": "cmd+k v",
+        "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+      },
+      {
+        "command": "devThemePro.openCsvPreviewInPlace",
+        "key": "ctrl+k ctrl+v",
+        "mac": "cmd+k cmd+v",
+        "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+      },
+      {
+        "command": "devThemePro.codeSnapshot",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s",
+        "when": "editorTextFocus && editorLangId != markdown"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "devThemePro.openPreview",
+          "when": "editorLangId == markdown",
+          "group": "navigation@1"
+        },
+        {
+          "command": "devThemePro.openCsvPreview",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "group": "navigation@1"
+        },
+        {
+          "command": "devThemePro.codeSnapshot",
+          "when": "editorTextFocus && editorLangId != markdown && resourceExtname != .csv && resourceExtname != .tsv && resourceExtname != .psv",
+          "group": "navigation@3"
+        },
+        {
+          "command": "devThemePro.exportPdf",
+          "when": "activeWebviewPanelId == devThemeProPreview",
+          "group": "navigation"
+        },
+        {
+          "command": "devThemePro.exportHtml",
+          "when": "activeWebviewPanelId == devThemeProPreview",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "submenu": "devThemePro.tools",
+          "group": "1_devThemePro"
+        }
+      ],
+      "devThemePro.tools": [
+        {
+          "command": "devThemePro.openPreview",
+          "when": "editorLangId == markdown",
+          "group": "1_preview@1"
+        },
+        {
+          "command": "devThemePro.openPreviewInPlace",
+          "when": "editorLangId == markdown",
+          "group": "1_preview@2"
+        },
+        {
+          "command": "devThemePro.exportPdf",
+          "when": "editorLangId == markdown",
+          "group": "2_export@1"
+        },
+        {
+          "command": "devThemePro.exportHtml",
+          "when": "editorLangId == markdown",
+          "group": "2_export@2"
+        },
+        {
+          "command": "devThemePro.openCsvPreview",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "group": "1_preview@1"
+        },
+        {
+          "command": "devThemePro.openCsvPreviewInPlace",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "group": "1_preview@2"
+        },
+        {
+          "command": "devThemePro.exportCsvPng",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "group": "2_export@2"
+        },
+        {
+          "command": "devThemePro.exportCsvHtml",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "group": "2_export@3"
+        },
+        {
+          "command": "devThemePro.codeSnapshot",
+          "when": "editorTextFocus",
+          "group": "3_code@1"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "devThemePro.openPreview",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "devThemePro.openPreviewInPlace",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "devThemePro.exportPdf",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "devThemePro.exportHtml",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "devThemePro.exportDiagram",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "devThemePro.openCsvPreview",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+        },
+        {
+          "command": "devThemePro.openCsvPreviewInPlace",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+        },
+        {
+          "command": "devThemePro.exportCsvPng",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+        },
+        {
+          "command": "devThemePro.exportCsvHtml",
+          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+        },
+        {
+          "command": "devThemePro.codeSnapshot"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Dev Theme Pro",
+      "properties": {
+        "devThemePro.chromePath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to Chrome or Chromium executable for PDF export. Leave empty for auto-detection."
+        }
+      }
+    },
+    "customEditors": [
+      {
+        "viewType": "devThemePro.markdownPreview",
+        "displayName": "Dev Theme Pro",
+        "selector": [
+          {
+            "filenamePattern": "*.md"
+          }
+        ],
+        "priority": "option"
+      },
+      {
+        "viewType": "devThemePro.csvPreview",
+        "displayName": "Dev Theme Pro (CSV)",
+        "selector": [
+          {
+            "filenamePattern": "*.csv"
+          },
+          {
+            "filenamePattern": "*.tsv"
+          },
+          {
+            "filenamePattern": "*.psv"
+          }
+        ],
+        "priority": "option"
+      }
+    ],
     "themes": [
       {
         "label": "Dev Theme Pro — 🌊 Ocean ☁️ Mist",
@@ -76,10 +348,26 @@
     ]
   },
   "scripts": {
-    "generate": "node generate.js",
-    "pack": "node generate.js && npx @vscode/vsce package --no-dependencies"
+    "generate": "node src/generate.js",
+    "build:css": "node src/build-preview-css.js",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "build": "npm run build:css && npm run compile",
+    "vscode:prepublish": "echo 'Built outputs are pre-committed — skipping build'",
+    "pack": "node src/generate.js && npm run build:css && node esbuild.js --production && npx @vscode/vsce package"
   },
   "dependencies": {
-    "@vscode/vsce": "^3.7.1"
+    "@vscode/vsce": "^3.7.1",
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^14.1.1",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/vscode": "~1.85.0",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.27.4",
+    "less": "^4.6.4",
+    "typescript": "^6.0.2"
   }
 }

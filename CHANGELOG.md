@@ -4,6 +4,41 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.5.9] - 2026-04-11
+
+### Added
+
+- **Built-in Markdown preview** — open Markdown in a Dev Theme Pro reading view with matching typography, spacing, and colors
+- **Flexible preview opening options** — open the preview beside your file, in the current editor, or through Open With
+- **PDF and HTML export for Markdown** — save polished documents straight from the preview toolbar
+- **Mermaid-ready Markdown docs** — diagrams render inside the preview, download as PNG, and export to PDF without blank spacer pages above them
+- **Theme-matched document previews** — tables, code blocks, task lists, and long-form docs now read like part of the theme instead of a generic renderer
+- **Table of contents sidebar** — jump through long documents with a collapsible heading navigator
+- **Presentation mode** — turn heading-based sections into slides with keyboard navigation
+- **CSV and TSV preview** — inspect data files with sorting, filtering, column resize, and row numbers
+- **Table export tools** — save data previews as PDF, PNG, or standalone HTML
+- **Code snapshot tool** — capture selected code as a styled PNG with a live preview before saving
+- **Whole-file snapshot fallback** — if nothing is selected, the snapshot tool captures the entire file automatically
+- **Theme-matched snapshots** — exported images use Dev Theme Pro styling instead of a generic dark theme
+- **Cleaner snapshot presentation** — snapshots use a minimal filename bar for a more refined look
+- **Unified right-click tools menu** — all Dev Theme Pro actions now live under one submenu in the editor context menu
+- **Cleaner preview interactions** — preview export actions work reliably, and browser-style context menus stay disabled inside previews
+- **Faster-scanning commands** — toolbar actions, menus, and command palette entries now use clearer icons and emoji labels
+
+### Fixed
+
+- **Large Mermaid exports keep the full diagram frame** — wide diagrams no longer lose the right edge during image export
+- **Mermaid PNG exports stay sharper on bigger diagrams** — export quality now scales more evenly for dense, wide layouts
+- **Wide Mermaid diagrams fit exported PDFs more reliably** — large diagrams are now rendered to the printable page width before PDF export so the right side is less likely to get cut off
+- **PDF Mermaid diagrams keep more even side spacing** — wide diagrams now normalize their internal SVG bounds before export so the right side stays aligned more like the left
+
+### Changed
+
+- **Diagram download now stays in the preview itself** — the editor right-click menu no longer duplicates the Mermaid export action
+- **Mermaid PNG downloads now save at a lighter size** — diagram exports still adapt to each layout, but now come out at roughly half the previous resolution
+
+---
+
 ## [0.5.8] - 2026-03-20
 
 ### Fixed
