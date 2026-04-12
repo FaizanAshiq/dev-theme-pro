@@ -4,18 +4,37 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.6.2] - 2026-04-12
+
+### Added
+
+- **Built-in delimited file coloring** — CSV, TSV, PSV, DSV, SSV, and TAB files now color columns directly in the editor, so structured text stays readable without extra extensions
+
+### Fixed
+
+- **Preview right-click menus stay out of the way** — Markdown, table, and snapshot previews no longer surface the default copy/cut/paste webview menu
+- **Export progress is now visible inside the preview** — longer copy and export actions now show an animated in-panel loading notice before switching to the final success message
+- **Code Snapshot now waits for a real selection** — the panel opens with a clear prompt instead of grabbing the whole file, and it works from more editor types
+- **Snapshot exports are tighter and cleaner** — copied and saved images now keep a slimmer frame with a softer accent border around the card
+- **Mermaid actions stay visible** — diagram copy and export buttons remain available in the preview instead of hiding until hover
+- **Markdown PDF export includes Mermaid diagrams again** — rendered diagrams now stay in the final PDF instead of disappearing during export
+
+### Changed
+
+- **Table tools cover more delimited formats** — preview and export commands now follow the same flow for additional structured text files beyond the original CSV, TSV, and PSV set
+
+---
+
 ## [0.6.1] - 2026-04-11
 
 ### Added
 
-- **Solar accent variants** — the warm yellow option now ships in both Mist and Void, so you can keep the same accent while choosing between the lighter and deepest dark base
+- **Solar variants** — the warmer accent now ships in both Mist and Void
 
 ### Changed
 
-- **Previews now match the active variant** — Markdown, tables, Mermaid exports, and code snapshots now follow Ocean, Nebula, or Solar instead of staying locked to one accent
-- **Solar is a little softer on the eyes** — the yellow accent was darkened slightly so highlights feel smoother without changing the overall character of the variant
-- **Void now uses the deepest dark base** — the old deepest canvas is now the standard Void backdrop, with inputs kept slightly lighter so fields still separate cleanly
-- **Mist inputs are now pure black** — form fields and similar controls sit darker against the lighter Mist canvas for stronger separation
+- **Previews follow the active variant** — Markdown, tables, Mermaid exports, and code snapshots now match Ocean, Nebula, or Solar
+- **Variant balance was refined** — Solar, Void, and Mist each got calmer contrast tuning for easier daily use
 
 ---
 
@@ -23,12 +42,12 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **Open With support for every preview type** — Markdown, CSV, TSV, and PSV files now surface a Dev Theme Pro preview option in VS Code's Open With flow
-- **Right-click preview shortcuts in more places** — Explorer and editor-tab menus now let you reopen supported files straight into the matching Dev Theme Pro preview
+- **Open With preview support** — Markdown and table files can open straight into Dev Theme Pro previews
+- **More quick entry points** — Explorer and tab menus now expose preview shortcuts in more places
 
 ### Changed
 
-- **Preview labels are now more consistent** — Markdown and table previews now use the same 🔮 Dev Theme Pro naming across menus and picker entries
+- **Preview naming is more consistent** — preview actions now use clearer Dev Theme Pro labels across menus and pickers
 
 ---
 
@@ -36,34 +55,17 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **Built-in Markdown preview** — open Markdown in a Dev Theme Pro reading view with matching typography, spacing, and colors
-- **Flexible preview opening options** — open the preview beside your file, in the current editor, or through Open With
-- **PDF and HTML export for Markdown** — save polished documents straight from the preview toolbar
-- **Mermaid-ready Markdown docs** — diagrams render inside the preview, download as PNG, and export to PDF without blank spacer pages above them
-- **Theme-matched document previews** — tables, code blocks, task lists, and long-form docs now read like part of the theme instead of a generic renderer
-- **Table of contents sidebar** — jump through long documents with a collapsible heading navigator
-- **Presentation mode** — turn heading-based sections into slides with keyboard navigation
-- **CSV and TSV preview** — inspect data files with sorting, filtering, column resize, and row numbers
-- **Table export tools** — save data previews as PDF, PNG, or standalone HTML
-- **Code snapshot tool** — capture selected code as a styled PNG with a live preview before saving
-- **Whole-file snapshot fallback** — if nothing is selected, the snapshot tool captures the entire file automatically
-- **Theme-matched snapshots** — exported images use Dev Theme Pro styling instead of a generic dark theme
-- **Cleaner snapshot presentation** — snapshots use a minimal filename bar for a more refined look
-- **Unified right-click tools menu** — all Dev Theme Pro actions now live under one submenu in the editor context menu
-- **Cleaner preview interactions** — preview export actions work reliably, and browser-style context menus stay disabled inside previews
-- **Faster-scanning commands** — toolbar actions, menus, and command palette entries now use clearer icons and emoji labels
+- **Built-in document tools** — Markdown preview, table preview, HTML/PDF export, Mermaid support, and code snapshots all landed in one release
+- **Navigation helpers** — table of contents, presentation mode, and cleaner action menus make long docs easier to work with
+- **Table utilities** — sorting, filtering, resizing, and multiple export options arrived for delimited data files
 
 ### Fixed
 
-- **Large Mermaid exports keep the full diagram frame** — wide diagrams no longer lose the right edge during image export
-- **Mermaid PNG exports stay sharper on bigger diagrams** — export quality now scales more evenly for dense, wide layouts
-- **Wide Mermaid diagrams fit exported PDFs more reliably** — large diagrams are now rendered to the printable page width before PDF export so the right side is less likely to get cut off
-- **PDF Mermaid diagrams keep more even side spacing** — wide diagrams now normalize their internal SVG bounds before export so the right side stays aligned more like the left
+- **Mermaid exports hold their shape better** — larger diagrams keep more of their frame and spacing across PNG and PDF output
 
 ### Changed
 
-- **Diagram download now stays in the preview itself** — the editor right-click menu no longer duplicates the Mermaid export action
-- **Mermaid PNG downloads now save at a lighter size** — diagram exports still adapt to each layout, but now come out at roughly half the previous resolution
+- **Diagram actions stay inside the preview** — Mermaid export is handled from the preview UI instead of duplicated elsewhere
 
 ---
 
@@ -71,8 +73,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- **Settings rows no longer show a focus border** — removed the accent outline from the active row in the Settings editor
-- **Source Control history is easier to scan** — branch refs, remote refs, and graph hover labels now read more clearly at a glance
+- **Settings and Source Control read more cleanly** — focus rows, refs, and history details were softened for easier scanning
 
 ---
 
@@ -80,28 +81,21 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- **Inputs feel more consistent across the UI** — chat, search, Settings, and other text fields now share the same depth-based surface treatment in Pure and Wire, with outlines removed for a cleaner look
-- **Floating surfaces separate more clearly** — stronger shadows, deeper Mist inputs, brighter Void inputs, and slightly lifted pickers/widgets make layered UI easier to read
-- **Settings and controls now follow the same surface system** — Settings inputs, checkbox fills, and surrounding UI lines now use the shared theme surface and border tuning for a cleaner, more consistent frame
+- **Inputs and floating panels feel more consistent** — chat, search, Settings, and layered surfaces now separate more clearly across variants
 
 ### Changed
 
-- **Theme selection is simpler** — the lineup now focuses on Mist and Void, grouped by depth in the picker as Ocean Mist, Nebula Mist, Ocean Void, and Nebula Void
-- **Focused rows and hover popups read more clearly** — active list states use richer accent-tinted backgrounds, and hover cards sit slightly higher above the editor
+- **Theme selection is simpler** — the lineup now centers on Mist and Void with cleaner focus and hover states
 
 ## [0.5.6] - 2026-03-07
 
 ### Fixed
 
-- **Layered inputs no longer look washed out** — chat and other overlapping input fields now keep their intended surface contrast
-- **Floating UI is easier to distinguish in Zen** — command palette, suggestions, and hover popups now use stronger separation with clearer shadows and borders where needed
-- **Small visual distractions are removed** — the breadcrumb shadow is gone, while autocomplete, inlay hints, and hover popups now keep consistent borders
+- **Layered UI is easier to read** — overlapping inputs, hover surfaces, autocomplete, and other floating elements now separate more cleanly
 
 ### Changed
 
-- **Zen input contrast is better balanced** — inputs are now tinted to separate more clearly from the editor in both Mist and Void
-- **Selection highlights are now unified** — focused rows in the tree, command palette, and autocomplete all use the same accent-tinted highlight
-- **Variant naming is cleaner** — Zen is now called Pure, and the theme icons were refreshed for Mist, Void, and Nebula
+- **Variant naming and highlights were cleaned up** — Pure replaced Zen, and shared selection states now feel more unified
 
 ---
 
@@ -109,14 +103,11 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **Zen variants** — a borderless version of every theme with separators removed, while keeping the active indent guide and active tab indicator for orientation
-- **Wire variants** — a fully bordered counterpart to Zen for each accent and depth
+- **Pure and Wire variants** — each accent/depth combo now comes in both borderless and bordered styles
 
 ### Changed
 
-- **Theme lineup was redesigned** — the extension now centers on Ocean and Nebula, each available in Mist Wire, Mist Zen, Void Wire, and Void Zen
-- **Accent usage is more readable** — accent text is brighter on dark surfaces, while accent backgrounds keep a deeper tone for buttons, badges, scrollbars, and selections
-- **Zen surfaces read more clearly** — floating UI is slightly elevated, inputs carry a subtle tint, and comments are a bit brighter across all variants
+- **The lineup was redesigned** — the extension shifted to a cleaner Ocean and Nebula family with stronger accent balance
 
 ---
 
@@ -124,7 +115,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- **Panel focus borders are gone** — Explorer, Source Control, and other large containers now behave like native panels, leaving focus rings for interactive controls instead
+- **Panel focus borders are gone** — large containers now behave more like native VS Code panels
 
 ---
 
@@ -132,7 +123,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Changed
 
-- **Packaging and publishing scripts were corrected** — CI and npm scripts now use `npx @vscode/vsce` directly and point to the right generator path
+- **Release packaging was cleaned up** — publishing and build scripts were corrected behind the scenes
 
 ---
 
@@ -140,19 +131,15 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- **Focus borders now correctly show the accent color** — focused inputs, dropdowns, buttons, and widgets all highlight with your chosen accent. Previously focus borders were invisible across the entire UI
-- **Accent-driven controls are more consistent** — marketplace buttons now use the full accent color, and toolbar hover and active states match the rest of the UI
+- **Accent focus states now show properly** — focused controls and accent-driven buttons read more clearly across the UI
 
 ### Added
 
-- **Python syntax highlighting** — added broad coverage for keywords, built-ins, types, classes, functions, decorators, magic members, `self` and `cls`, constants, type annotations, and f-string format specs
-- **Broader UI accent coverage** — checkboxes, toolbar states, Settings focused rows, Search input borders, extension buttons, and input option hover states now pick up the accent more consistently
+- **Python highlighting and wider accent coverage** — language color support and UI accent reach both expanded noticeably
 
 ### Changed
 
-- **HTML highlighting is cleaner** — tag punctuation, `=` signs, entities, `<!DOCTYPE>`, embedded script/style tags, and attribute quote punctuation now read more consistently
-- **CSS, SCSS, and Less highlighting is broader** — property names, units, at-rules, `!important`, functions, custom properties, variables, interpolation, ID selectors, class selectors, and vendor-prefixed properties now have clearer coverage and balance
-- **Fallback text color is more neutral** — plain unscoped text now feels more balanced across languages
+- **Front-end syntax colors were refined** — HTML, CSS-family files, and fallback text became more balanced
 
 ---
 
@@ -160,13 +147,11 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Changed
 
-- **Core syntax colors were refined** — class, type, function, and keyword hues now separate more clearly
-- **Bold is used more selectively** — variables, properties, and keywords are no longer bold by default, leaving stronger emphasis for classes, decorators, and `!important`
-- **Supporting UI colors were aligned** — bracket pairs, symbol icons, charts, and terminal ANSI colors now match the refined palette
+- **Core syntax colors were refined** — major token groups separate more clearly, with cleaner emphasis rules
 
 ### Added
 
-- **More syntax details are covered** — optional chaining, type annotation operators, separators, single-quoted strings, JSON values, and `extends` / `implements` now highlight more consistently
+- **More language details are covered** — smaller syntax cases now highlight more consistently
 
 ---
 
@@ -174,17 +159,16 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **12 theme variants** — mix four accents with three background depths: Ocean, Nebula, Emerald, and Amber across Dusk, Night, and Void
-- **Floating surfaces adapt to each variant** — panels and inlay hints automatically use a subtly elevated background tone
+- **12 theme variants** — four accents and three depths landed in the first big lineup expansion
+- **Floating surfaces adapt by variant** — panels and secondary surfaces started following the active depth
 
 ### Changed
 
-- **Decorators stand out more clearly** — they are now blue and bold, with React and Vue component tags styled to match
-- **Constructors are colored correctly** — class constructors no longer appear as functions
+- **Decorator and constructor styling was corrected** — framework-heavy code reads more cleanly
 
 ### Fixed
 
-- **Floating widget backgrounds now match the selected depth** — each variant carries the right background tone into floating UI
+- **Floating widgets now match the selected depth** — popups and overlays stay closer to the chosen variant
 
 ---
 
@@ -192,18 +176,17 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- **4 accent variants** — Ocean, Nebula, Emerald, and Amber
-- **Accent color now reaches the full UI** — status bar, activity bar, badges, buttons, scrollbars, diff gutter, minimap, breadcrumbs, and more all follow the chosen accent
-- **Semantic highlighting was added** — files now color in almost instantly on open, with React and Vue component tags styled distinctly and a new extension icon included
+- **4 accent variants** — Ocean, Nebula, Emerald, and Amber launched
+- **Accent color reached more of the UI** — bars, badges, buttons, scrollbars, and editor chrome became more cohesive
+- **Semantic highlighting arrived** — files color in faster and component tags read more distinctly
 
 ### Fixed
 
-- **File-open color flash is gone** — TextMate and semantic token colors now align
-- **Several UI colors were corrected** — terminal magenta, scrollbars, selection highlights, and inlay hints now render more consistently
+- **Color flashes and a few rough UI tones were corrected** — opening files and scanning the interface feels steadier
 
 ### Improved
 
-- **Git and list states are clearer** — git decorations, file list selection and hover states, and focus border balance were all improved
+- **Git and list states are clearer** — file trees and source control details got easier to scan
 
 ---
 
@@ -211,14 +194,12 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- **Core UI visibility issues were fixed** — input borders now show correctly in chat, search, find, and other inputs, and current versus other find matches are easier to distinguish
-- **Selection and status states are clearer** — badge pills, list hover and active states, the Settings modified indicator, and inactive selection highlights now read properly
-- **Several harsh or incorrect UI colors were corrected** — editor rulers, panel drop overlays, menu separators, and list hover backgrounds now feel balanced
-- Inlay hints no longer create harsh dark slots behind them
+- **Core UI visibility issues were fixed** — inputs, selections, badges, and several harsh UI colors were cleaned up
+- **Inlay hints blend better** — hint backgrounds no longer create harsh dark slots
 
 ### Added
 
-- Semantic highlighting enabled for richer language-server-powered coloring
+- **Semantic highlighting support** — richer language-server coloring was enabled
 
 ---
 
@@ -226,7 +207,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Improved
 
-- README fully rewritten for the marketplace — cleaner layout, better structure, improved installation guide, descriptive screenshot captions
+- **Marketplace presentation was improved** — the README was reorganized for a cleaner first impression
 
 ---
 
@@ -234,9 +215,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Improved
 
-- Screenshot images optimized — 77% smaller file sizes for faster marketplace loading
-- Screenshots converted to JPEG format
-- Sample files updated for cleaner screenshots
+- **Marketplace assets were optimized** — screenshots became lighter and cleaner for faster loading
 
 ---
 
@@ -244,7 +223,7 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Fixed
 
-- Automated publishing workflow reliability improvements
+- **Publishing reliability improved** — release automation became more dependable
 
 ---
 
@@ -252,11 +231,15 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ### Added
 
-- GitHub Actions workflow for automated marketplace publishing
+- **Automated marketplace publishing** — releases can now ship through GitHub Actions
 
 ---
 
 ## [0.1.0] - 2025-12-29
+
+### Added
+
+- **Initial release** — Dev Theme Pro launched with its first dark-theme foundation
 
 ### Added
 

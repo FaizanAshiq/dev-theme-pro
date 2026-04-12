@@ -1,9 +1,9 @@
 {
   "name": "dev-theme-pro",
   "displayName": "Dev Theme Pro",
-  "description": "A polished dark theme with built-in Markdown preview, Mermaid-friendly PDF export, CSV tools, and code snapshots.",
+  "description": "6-in-1 dark theme with Markdown preview, Mermaid diagrams, table tools, export workflows, and code snapshots.",
   "publisher": "FaizanAshiq",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -15,7 +15,7 @@
   },
   "main": "./out/extension.js",
   "activationEvents": [
-    "onLanguage:markdown"
+    "onStartupFinished"
   ],
   "repository": {
     "type": "git",
@@ -160,19 +160,19 @@
         "command": "devThemePro.openCsvPreview",
         "key": "ctrl+k v",
         "mac": "cmd+k v",
-        "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+        "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/"
       },
       {
         "command": "devThemePro.openCsvPreviewInPlace",
         "key": "ctrl+k ctrl+v",
         "mac": "cmd+k cmd+v",
-        "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+        "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/"
       },
       {
         "command": "devThemePro.codeSnapshot",
         "key": "ctrl+shift+s",
         "mac": "cmd+shift+s",
-        "when": "editorTextFocus && editorLangId != markdown"
+        "when": "editorTextFocus"
       }
     ],
     "menus": {
@@ -184,12 +184,12 @@
         },
         {
           "command": "devThemePro.openCsvPreview",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/",
           "group": "navigation@1"
         },
         {
           "command": "devThemePro.codeSnapshot",
-          "when": "editorTextFocus && editorLangId != markdown && resourceExtname != .csv && resourceExtname != .tsv && resourceExtname != .psv",
+          "when": "resourceScheme == file || resourceScheme == untitled",
           "group": "navigation@3"
         },
         {
@@ -217,7 +217,7 @@
         },
         {
           "command": "devThemePro.openTableWith",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/",
           "group": "navigation@2"
         }
       ],
@@ -229,7 +229,7 @@
         },
         {
           "command": "devThemePro.openTableWith",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/",
           "group": "navigation@2"
         }
       ],
@@ -245,34 +245,14 @@
           "group": "1_preview@2"
         },
         {
-          "command": "devThemePro.exportPdf",
-          "when": "editorLangId == markdown",
-          "group": "2_export@1"
-        },
-        {
-          "command": "devThemePro.exportHtml",
-          "when": "editorLangId == markdown",
-          "group": "2_export@2"
-        },
-        {
           "command": "devThemePro.openCsvPreview",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/",
           "group": "1_preview@1"
         },
         {
           "command": "devThemePro.openCsvPreviewInPlace",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/",
           "group": "1_preview@2"
-        },
-        {
-          "command": "devThemePro.exportCsvPng",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
-          "group": "2_export@2"
-        },
-        {
-          "command": "devThemePro.exportCsvHtml",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv",
-          "group": "2_export@3"
         },
         {
           "command": "devThemePro.codeSnapshot",
@@ -307,23 +287,23 @@
         },
         {
           "command": "devThemePro.openCsvPreview",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/"
         },
         {
           "command": "devThemePro.openCsvPreviewInPlace",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/"
         },
         {
           "command": "devThemePro.openTableWith",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/"
         },
         {
           "command": "devThemePro.exportCsvPng",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/"
         },
         {
           "command": "devThemePro.exportCsvHtml",
-          "when": "resourceExtname == .csv || resourceExtname == .tsv || resourceExtname == .psv"
+          "when": "resourceExtname =~ /^\\.(csv|tsv|psv|dsv|ssv|tab)$/"
         },
         {
           "command": "devThemePro.codeSnapshot"
@@ -363,6 +343,15 @@
           },
           {
             "filenamePattern": "*.psv"
+          },
+          {
+            "filenamePattern": "*.dsv"
+          },
+          {
+            "filenamePattern": "*.ssv"
+          },
+          {
+            "filenamePattern": "*.tab"
           }
         ],
         "priority": "option"
@@ -370,32 +359,32 @@
     ],
     "themes": [
       {
-        "label": "Dev Theme Pro — 🌊 Ocean ☁️ Mist",
+        "label": "Dev Theme Pro — Ocean Mist",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-ocean-mist-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🔮 Nebula ☁️ Mist",
+        "label": "Dev Theme Pro — Nebula Mist",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-nebula-mist-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — ☀️ Solar ☁️ Mist",
+        "label": "Dev Theme Pro — Solar Mist",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-solar-mist-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🌊 Ocean ✨ Void",
+        "label": "Dev Theme Pro — Ocean Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-ocean-void-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — 🔮 Nebula ✨ Void",
+        "label": "Dev Theme Pro — Nebula Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-nebula-void-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — ☀️ Solar ✨ Void",
+        "label": "Dev Theme Pro — Solar Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-solar-void-color-theme.json"
       }
@@ -403,12 +392,13 @@
   },
   "scripts": {
     "generate": "node src/generate.js",
+    "build:webviews": "node src/build-webview-assets.js",
     "build:css": "node src/build-preview-css.js",
     "compile": "node esbuild.js",
-    "watch": "node esbuild.js --watch",
-    "build": "npm run build:css && npm run compile",
+    "watch": "npm run build:webviews && npm run build:css && node esbuild.js --watch",
+    "build": "npm run build:webviews && npm run build:css && npm run compile",
     "vscode:prepublish": "echo 'Built outputs are pre-committed — skipping build'",
-    "pack": "node src/generate.js && npm run build:css && node esbuild.js --production && npx @vscode/vsce package"
+    "pack": "node src/generate.js && npm run build:webviews && npm run build:css && node esbuild.js --production && npx @vscode/vsce package"
   },
   "dependencies": {
     "@vscode/vsce": "^3.7.1",

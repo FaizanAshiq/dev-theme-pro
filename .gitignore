@@ -3,6 +3,7 @@
 node_modules/
 out/*.map
 media/preview.css
+media/webviews/
 
 # ── Source & build scripts (private) ──
 src/
