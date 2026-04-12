@@ -4,6 +4,12 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.6.3] - 2026-04-12
+
+### Fixed
+
+- **Release packaging was cleaned up** — publishing and build scripts were corrected behind the scenes
+
 ## [0.6.2] - 2026-04-12
 
 ### Added

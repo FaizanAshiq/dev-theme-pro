@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build webview assets
+        run: npm run build:webviews
+
       - name: Build preview CSS
         run: npm run build:css
 
@@ -38,6 +41,8 @@ jobs:
           echo "Version: $(node -p "require('./package.json').version")"
           test -f out/extension.js || { echo '❌ out/extension.js missing — run npm run pack locally first'; exit 1; }
           test -f media/preview.css || { echo '❌ media/preview.css missing — run npm run pack locally first'; exit 1; }
+          test -f media/webviews/markdown/preview.html || { echo '❌ media/webviews missing — run npm run build:webviews before packaging'; exit 1; }
+          test -f media/webviews/shared/panel-widget.html || { echo '❌ shared webview widget missing — build webviews before packaging'; exit 1; }
           ls themes/*.json > /dev/null 2>&1 || { echo '❌ theme JSONs missing — run npm run pack locally first'; exit 1; }
           echo '✓ All built outputs present'
 
