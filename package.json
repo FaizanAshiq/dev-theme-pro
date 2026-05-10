@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "6-in-1 dark theme with Markdown preview, Mermaid diagrams, table tools, export workflows, and code snapshots.",
   "publisher": "FaizanAshiq",
-  "version": "0.6.3",
+  "version": "0.7.0",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -401,9 +401,10 @@
     "pack": "node src/generate.js && npm run build:webviews && npm run build:css && node esbuild.js --production && npx @vscode/vsce package"
   },
   "dependencies": {
-    "@vscode/vsce": "^3.7.1",
+    "@vscode/vsce": "^3.9.1",
     "highlight.js": "^11.11.1",
     "markdown-it": "^14.1.1",
+    "mermaid": "^11.14.0",
     "ws": "^8.20.0"
   },
   "devDependencies": {

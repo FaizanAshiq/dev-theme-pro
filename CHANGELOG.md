@@ -4,6 +4,20 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.7.0] - 2026-05-03
+
+### Fixed
+
+- **Exports now follow the previewed file** — Markdown and table previews opened from Explorer or Open With now export the file you are actually viewing instead of asking for another open editor first
+- **Mermaid exports keep working without the internet** — HTML, PDF, and diagram exports now render Mermaid from the bundled runtime, so exports no longer stop on Mermaid loading failures when you are offline
+- **Previewed diagrams stay exportable offline** — Markdown previews now keep Mermaid diagrams and their copy/export controls available even when the network is unavailable
+- **Table image exports are tightly cropped** — PNG exports and copied table images no longer include a large empty block underneath shorter datasets
+
+### Changed
+
+- **PDF exports finish faster** — document exports now render Mermaid in one pass instead of making extra diagram rendering trips before the PDF is built
+- **PDF layout tracks HTML more closely** — PDF text sizing is tightened so the exported document structure stays closer to the HTML export without shrinking Mermaid diagrams themselves
+
 ## [0.6.3] - 2026-04-12
 
 ### Fixed
