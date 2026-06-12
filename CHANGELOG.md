@@ -4,6 +4,41 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.8.0] - 2026-06-07
+
+### Added
+
+- **Table pagination** — CSV/TSV/PSV/DSV/SSV previews now page through the entire file (100/250/500 rows per page, max 500) with first/prev/next/last controls and direct page jump, so files with 100k+ records are fully browsable
+- **Full-file search** — the preview search box now matches against every record in the file (not just the rows on screen), with debounced input, match highlighting, and a match count in the summary
+- **Markdown preview text size** — a new toolbar button cycles the preview text between Small, Medium, and Large (default), and the choice is remembered per preview
+- **Clickable Markdown links** — in-body section links smooth-scroll to their heading, relative file links open the target file (jumping to the linked heading when the URL has a `#fragment`), and external/`mailto:` links open in the default app
+- **Loading overlays across previews** — Markdown, table, and code snapshot panels show a lightweight shell and progress while large content is prepared, so the editor stays responsive
+- **CSV/TSV export safeguards** — table PNG exports check size, row/column counts, and timeouts up front and suggest HTML export when a sheet is too large for a screenshot
+- **Async table and Markdown pipelines** — parsing, rendering, and exports yield off the UI thread with clear timeout messages when work takes too long
+
+### Changed
+
+- **Whole-file sorting** — clicking a column header sorts the entire dataset in the extension host instead of only the rows rendered in the webview
+- **Removed the 15,000-row preview cap** — the previous truncation limit is gone; all records are reachable through pagination
+- **Much faster large-file previews** — the webview renders at most one page (≤500 rows) of DOM instead of thousands, and the parser gained a fast path for unquoted rows (150k rows parse in well under a second)
+- **HTML table exports stay generous** — full HTML export keeps higher limits than PNG while still reporting timeouts on extreme files
+- **Dev webview templates refresh on save** — template cache keys include file modification time so HTML/CSS edits apply after save without restarting the extension host
+
+### Fixed
+
+- **Quoted fields with embedded newlines parse correctly** — multiline cells inside quotes no longer break rows apart in previews and exports
+- **Search highlighting no longer injects cell text as HTML** — matches are highlighted via DOM nodes, so cells containing markup render literally
+- **Side panel re-renders are debounced** — typing in a delimited file no longer re-parses the whole file on every keystroke while the standalone preview panel is open
+- **Preview scroll position is preserved correctly** — the table scroll container's position is saved and restored when the webview is hidden and re-shown
+- **Table-of-contents links now jump to the right heading** — Markdown headings render with anchor IDs, so clicking a TOC entry navigates correctly even when several headings share the same title (e.g. multiple “Setup” sections); in-page and exported-HTML anchors now resolve too
+- **Table of contents ignores `~~~`-fenced code** — headings written inside tilde code fences no longer show up as phantom TOC entries
+- **Markdown preview no longer sticks on “Updating preview…”** — previews load a fast shell first, then swap in rendered content without blocking the loader on the previous page
+- **Table side panel exports follow the active file** — copy/save image from the CSV side panel targets the file you are viewing, not the first file that opened the panel
+- **PDF code blocks show full content** — long lines and fenced code wrap instead of clipping or relying on scrollbars that PDF viewers ignore
+- **Preview code blocks wrap on screen** — fenced code uses gentler word breaking so prose and long tokens stay readable without horizontal scrolling
+- **Success toasts no longer shrink** — notice-style messages dropped the countdown bar; progress toasts still show an indeterminate bar while work runs
+- **Success notices use a clearer green style** — completed operations are easier to distinguish from in-progress exports
+
 ## [0.7.0] - 2026-05-03
 
 ### Fixed
