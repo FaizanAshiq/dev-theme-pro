@@ -15,6 +15,9 @@ out/*.map
 
 # ── Dev-only files ──
 DE.md
+todo.md
+CLAUDE.md
+.claude/**
 samples/**
 node_modules/**
 package-lock.json

@@ -17,9 +17,11 @@ media/preview-theme.less
 samples/
 *DE.md
 copilot-instructions.md
+CLAUDE.md
 .vscode/
 
 # ── OS / Editor junk ──
 .DS_Store
 *.log
 backup/
+todo.md

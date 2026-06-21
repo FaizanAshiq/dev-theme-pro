@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "6-in-1 dark theme with Markdown preview, Mermaid diagrams, table tools, export workflows, and code snapshots.",
   "publisher": "FaizanAshiq",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -397,11 +397,11 @@
     "compile": "node esbuild.js",
     "watch": "npm run build:webviews && npm run build:css && node esbuild.js --watch",
     "build": "npm run build:webviews && npm run build:css && npm run compile",
-    "vscode:prepublish": "node -e \"const fs=require('fs'); const required=['out/extension.js','media/preview.css','media/webviews/markdown/preview.html','media/webviews/markdown/loading-shell.html','media/webviews/markdown/loading-shell.css','media/webviews/csv/preview.html','media/webviews/shared/panel-widget.html','media/webviews/shared/loading-overlay.js']; const missing=required.filter(file=>!fs.existsSync(file)); if(missing.length){console.error('Missing built outputs:', missing.join(', ')); process.exit(1);} console.log('Built outputs verified');\"",
+    "vscode:prepublish": "node -e \"const fs=require('fs'); const required=['out/extension.js','out/markdown-worker.js','media/preview.css','media/webviews/markdown/preview.html','media/webviews/markdown/loading-shell.html','media/webviews/markdown/loading-shell.css','media/webviews/csv/preview.html','media/webviews/shared/panel-widget.html','media/webviews/shared/loading-overlay.js']; const missing=required.filter(file=>!fs.existsSync(file)); if(missing.length){console.error('Missing built outputs:', missing.join(', ')); process.exit(1);} console.log('Built outputs verified');\"",
     "pack": "node src/generate.js && npm run build:webviews && npm run build:css && node esbuild.js --production && npx @vscode/vsce package"
   },
   "dependencies": {
-    "@vscode/vsce": "^3.9.1",
+    "@vscode/vsce": "^3.9.2",
     "highlight.js": "^11.11.1",
     "markdown-it": "^14.1.1",
     "mermaid": "^11.14.0",

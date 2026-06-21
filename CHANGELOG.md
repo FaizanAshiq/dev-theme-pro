@@ -4,6 +4,28 @@ All notable changes to "Dev Theme Pro" will be documented in this file.
 
 ---
 
+## [0.8.1] - 2026-06-21
+
+### Added
+
+- **Interactive Mermaid viewer** — an Expand button on each rendered diagram opens a full-screen viewer you can zoom (mouse wheel or toolbar) and pan (drag), so large diagrams are no longer cramped in the preview; includes fit-to-screen, a live zoom indicator, click-backdrop-to-close, and keyboard shortcuts (`Esc` to close, `+`/`-` to zoom, `0` to fit)
+
+### Changed
+
+- **Flicker-free Markdown preview** — the preview now updates in place as you type instead of fully reloading, so it no longer flashes, keeps your scroll position and open table of contents, and stops re-rendering diagrams that haven't changed
+- **Diagrams load only when needed** — the Mermaid engine now loads the first time a document actually contains a diagram (and only once), so plain Markdown previews open faster and use less memory
+- **Instant theme switching** — changing your VS Code color theme now restyles open Markdown and table previews immediately instead of rebuilding and re-parsing them
+- **Smaller exports** — HTML and PDF exports of documents without diagrams no longer embed the diagram engine, producing much smaller files
+- **Faster, more responsive previews on large files** — Markdown rendering runs off the main thread, and table search, column coloring, and column resizing do less work while you type and drag
+
+### Fixed
+
+- **Preview no longer goes blank when switching tabs** — Markdown and table previews now stay alive in the background, so clicking away and back keeps your content, scroll position, and open table of contents instead of showing a stuck “Rendering…” state
+- **Smooth table-of-contents scrolling** — clicking a TOC entry (or an in-page link) now animates to the heading instead of jumping
+- **Readable Mermaid subgraph containers** — grouped sections (subgraphs/clusters) in diagrams now sit on a clearly visible container surface with a defined border instead of an almost-invisible tint, so groupings stand out against the diagram background in both the live preview and HTML/PDF/PNG exports
+- **Per-diagram Copy/Export in multi-diagram documents** — Copy as PNG and Export now act on the diagram whose button you click; previously, documents with more than one diagram routed every button to the last diagram
+- **Cleaner extension package** — internal development files (`todo.md` and local editor settings) are no longer bundled into the published extension
+
 ## [0.8.0] - 2026-06-07
 
 ### Added
