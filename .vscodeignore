@@ -14,11 +14,14 @@ media/preview-theme.less
 out/*.map
 
 # ── Dev-only files ──
-DE.md
-todo.md
-CLAUDE.md
-.claude/**
+*.md
+!README.md
+!CHANGELOG.md
+.*/**
+docs/**
 samples/**
+*.png
+*.jpg
 node_modules/**
 package-lock.json
 

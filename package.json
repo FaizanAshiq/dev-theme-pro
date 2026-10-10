@@ -3,7 +3,7 @@
   "displayName": "Dev Theme Pro",
   "description": "6-in-1 dark theme with Markdown preview, Mermaid diagrams, table tools, export workflows, and code snapshots.",
   "publisher": "FaizanAshiq",
-  "version": "0.8.1",
+  "version": "1.0.0",
   "license": "MIT",
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -11,7 +11,7 @@
     "theme": "dark"
   },
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.131.0"
   },
   "main": "./out/extension.js",
   "activationEvents": [
@@ -110,6 +110,12 @@
         "title": "🌐 Export as HTML",
         "category": "Dev Theme Pro",
         "icon": "$(file-code)"
+      },
+      {
+        "command": "devThemePro.openRenderedDiff",
+        "title": "🔮 Open Rendered Diff (Dev Theme Pro)",
+        "category": "Dev Theme Pro",
+        "icon": "$(diff)"
       },
       {
         "command": "devThemePro.codeSnapshot",
@@ -233,6 +239,13 @@
           "group": "navigation@2"
         }
       ],
+      "scm/resourceState/context": [
+        {
+          "command": "devThemePro.openRenderedDiff",
+          "when": "scmProvider == git",
+          "group": "navigation@2"
+        }
+      ],
       "devThemePro.tools": [
         {
           "command": "devThemePro.openPreview",
@@ -279,6 +292,10 @@
         },
         {
           "command": "devThemePro.exportHtml",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "command": "devThemePro.openRenderedDiff",
           "when": "editorLangId == markdown"
         },
         {
@@ -359,60 +376,68 @@
     ],
     "themes": [
       {
-        "label": "Dev Theme Pro — Ocean Mist",
+        "id": "Dev Theme Pro — Ocean Mist",
+        "label": "Dev Theme Pro: Ocean Mist",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-ocean-mist-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — Nebula Mist",
+        "id": "Dev Theme Pro — Nebula Mist",
+        "label": "Dev Theme Pro: Nebula Mist",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-nebula-mist-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — Solar Mist",
+        "id": "Dev Theme Pro — Solar Mist",
+        "label": "Dev Theme Pro: Solar Mist",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-solar-mist-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — Ocean Void",
+        "id": "Dev Theme Pro — Ocean Void",
+        "label": "Dev Theme Pro: Ocean Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-ocean-void-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — Nebula Void",
+        "id": "Dev Theme Pro — Nebula Void",
+        "label": "Dev Theme Pro: Nebula Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-nebula-void-color-theme.json"
       },
       {
-        "label": "Dev Theme Pro — Solar Void",
+        "id": "Dev Theme Pro — Solar Void",
+        "label": "Dev Theme Pro: Solar Void",
         "uiTheme": "vs-dark",
         "path": "./themes/dev-theme-pro-solar-void-color-theme.json"
       }
     ]
   },
   "scripts": {
-    "generate": "node src/generate.js",
+    "generate": "node src/generate.js && node src/audit-theme.js",
+    "audit": "node src/audit-theme.js",
     "build:webviews": "node src/build-webview-assets.js",
     "build:css": "node src/build-preview-css.js",
     "compile": "node esbuild.js",
     "watch": "npm run build:webviews && npm run build:css && node esbuild.js --watch",
     "build": "npm run build:webviews && npm run build:css && npm run compile",
     "vscode:prepublish": "node -e \"const fs=require('fs'); const required=['out/extension.js','out/markdown-worker.js','media/preview.css','media/webviews/markdown/preview.html','media/webviews/markdown/loading-shell.html','media/webviews/markdown/loading-shell.css','media/webviews/csv/preview.html','media/webviews/shared/panel-widget.html','media/webviews/shared/loading-overlay.js']; const missing=required.filter(file=>!fs.existsSync(file)); if(missing.length){console.error('Missing built outputs:', missing.join(', ')); process.exit(1);} console.log('Built outputs verified');\"",
-    "pack": "node src/generate.js && npm run build:webviews && npm run build:css && node esbuild.js --production && npx @vscode/vsce package"
+    "pack": "npm run generate && npm run build:webviews && npm run build:css && node esbuild.js --production && npx @vscode/vsce package"
   },
   "dependencies": {
     "@vscode/vsce": "^3.9.2",
+    "diff": "^9.0.0",
     "highlight.js": "^11.11.1",
-    "markdown-it": "^14.1.1",
-    "mermaid": "^11.14.0",
-    "ws": "^8.20.0"
+    "markdown-it": "^15.0.0",
+    "mermaid": "^11.16.0",
+    "ws": "^8.21.1"
   },
   "devDependencies": {
-    "@types/markdown-it": "^14.1.2",
-    "@types/vscode": "~1.85.0",
+    "@types/node": "^26.1.2",
+    "@types/vscode": "^1.125.0",
     "@types/ws": "^8.18.1",
-    "esbuild": "^0.27.4",
-    "less": "^4.6.4",
-    "typescript": "^6.0.2"
+    "esbuild": "^0.28.1",
+    "less": "^4.8.1",
+    "typescript": "^7.0.2"
   }
 }

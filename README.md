@@ -21,21 +21,21 @@ Dev Theme Pro is built for people who want their workspace to look better and do
 
 ## Why People Keep It Installed
 
-- **It replaces extension clutter** — theme, document preview, Mermaid workflow, table inspection, and snapshots all live in one package
-- **Previews follow your active variant** — Ocean, Nebula, and Solar stay in sync across Markdown, tables, diagrams, and snapshots
-- **The UI is built for real work** — table filtering, Mermaid copy/export, and PDF output are part of the daily workflow, not afterthoughts
-- **Shared output looks deliberate** — exported docs, diagrams, tables, and snapshots keep the same visual system as the editor
+- **It replaces extension clutter**: theme, document preview, Mermaid workflow, table inspection, and snapshots all live in one package
+- **Previews follow your active variant**: Ocean, Nebula, and Solar stay in sync across Markdown, tables, diagrams, and snapshots
+- **The UI is built for real work**: table filtering, Mermaid copy/export, and PDF output are part of the daily workflow, not afterthoughts
+- **Shared output looks deliberate**: exported docs, diagrams, tables, and snapshots keep the same visual system as the editor
 
 ## Theme Variants
 
 Dev Theme Pro ships with six variants:
 
-- **Ocean Mist** — blue accent on the lighter dark base
-- **Nebula Mist** — purple accent on the lighter dark base
-- **Solar Mist** — warm gold accent on the lighter dark base
-- **Ocean Void** — blue accent on the deepest base
-- **Nebula Void** — purple accent on the deepest base
-- **Solar Void** — warm gold accent on the deepest base
+- **Ocean Mist**: blue accent on the lighter dark base
+- **Nebula Mist**: purple accent on the lighter dark base
+- **Solar Mist**: warm gold accent on the lighter dark base
+- **Ocean Void**: blue accent on the deepest base
+- **Nebula Void**: purple accent on the deepest base
+- **Solar Void**: warm gold accent on the deepest base
 
 If you want the fastest default: **Mist** is the easier long-session pick, while **Void** is the denser, deeper canvas.
 
@@ -59,11 +59,11 @@ Open any Markdown file in a reading view that feels like part of the theme inste
 
 What you get:
 
-- **Theme-matched reading layout** — headings, code blocks, tables, and long-form text feel native to the active variant
-- **Mermaid built in** — diagrams render in preview and can be copied or exported directly from the panel
-- **Better export output** — HTML and PDF keep the same look, with Mermaid diagrams included in the final file
-- **Table of contents sidebar** — jump through large docs without losing your place
-- **Presentation mode** — turn heading sections into slides for demos or walkthroughs
+- **Theme-matched reading layout**: headings, code blocks, tables, and long-form text feel native to the active variant
+- **Mermaid built in**: diagrams render in preview and can be copied or exported directly from the panel
+- **Better export output**: HTML and PDF keep the same look, with Mermaid diagrams included in the final file
+- **Table of contents sidebar**: jump through large docs without losing your place
+- **Presentation mode**: turn heading sections into slides for demos or walkthroughs
 
 PDF and image export use Chrome or Chromium automatically. If VS Code cannot find it, set `devThemePro.chromePath` in Settings.
 
@@ -82,12 +82,12 @@ Supported files: `.csv`, `.tsv`, `.psv`, `.dsv`, `.ssv`, `.tab`
 
 What you get:
 
-- **Sorting** — click any column header to sort ascending or descending
-- **Filtering** — search large datasets instantly
-- **Column resize** — fit the view around the data you care about
-- **Row numbers** — keep references stable while reviewing larger files
-- **Built-in column text coloring** — structured text is easier to scan directly in the editor
-- **Export options** — save the table as PDF, PNG, or standalone HTML
+- **Sorting**: click any column header to sort ascending or descending
+- **Filtering**: search large datasets instantly
+- **Column resize**: fit the view around the data you care about
+- **Row numbers**: keep references stable while reviewing larger files
+- **Built-in column text coloring**: structured text is easier to scan directly in the editor
+- **Export options**: save the table as PDF, PNG, or standalone HTML
 
 ## Code Snapshot
 
@@ -117,9 +117,9 @@ All commands are also available in the **Command Palette**. Search for **Dev The
 
 All preview and export actions are grouped under one **🔮 Dev Theme Pro** submenu in the editor context menu.
 
-- **Markdown files** — open preview, export PDF, export HTML
-- **Delimited files** — open table preview, export PNG, export HTML
-- **Code files** — open the snapshot workflow
+- **Markdown files**: open preview, export PDF, export HTML
+- **Delimited files**: open table preview, export PNG, export HTML
+- **Code files**: open the snapshot workflow
 
 Matching **Open With…** entries are also available from the Explorer and editor tabs.
 
@@ -131,7 +131,7 @@ Matching **Open With…** entries are also available from the Explorer and edito
 
 ## Screenshot
 
-![Dev Theme Pro — Editor](images/code.jpg)
+![The Dev Theme Pro editor](images/code.jpg)
 
 ## Changelog
 
@@ -144,11 +144,11 @@ Found something off or want another feature?
 
 ## Author
 
-**Faizan Ashiq** — [LinkedIn](https://www.linkedin.com/in/faizanashiq/) · [GitHub](https://github.com/FaizanAshiq)
+**Faizan Ashiq**: [LinkedIn](https://www.linkedin.com/in/faizanashiq/) · [GitHub](https://github.com/FaizanAshiq)
 
 ## License
 
-MIT © 2025–2026 Faizan Ashiq — [Full License](LICENSE.txt)
+MIT © 2025 to 2026 Faizan Ashiq. [Full License](LICENSE.txt)
 
 ---
 
